@@ -1,0 +1,16 @@
+body{
+	background-image: url(http://data.whicdn.com/images/137775981/large.jpg);
+	background-repeat: repeat;
+}
+
+label{
+	color: purple;
+	background: #99ff66;
+	font-size: 2em;
+}
+img{
+	border: solid black;
+}
+button {
+	font-size:2em;
+}
