@@ -251,7 +251,7 @@
 			
 			</div><!--/row -->
 		</div><!--/container -->
-	</div><!--/social -->
+	</div><!  --/social -->
 
 	<div id="footerwrap">
 		<div class="container">
