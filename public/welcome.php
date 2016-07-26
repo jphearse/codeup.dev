@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
     <title>Joe Phearse</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
@@ -96,7 +96,7 @@
 				</div>
 
 				<br>
-				
+
 				<h2>Education</h2><hr>
 				<p><strong>The University of Texas at San Antonio</strong></strong></p>
 				<p><em><strong>San Antonio, Texas</strong> </em></p>
@@ -231,6 +231,27 @@
 	</div><!--/container -->
 	</section>
 
+<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-3">
+					<a href="https://github.com/jphearse" target="_blank"><i class="fa fa-github"></i></a>
+				</div>
+				<div class="col-lg-3">
+					<a href="https://www.facebook.com/joe.phearse" target="_blank"><i class="fa fa-facebook"></i></a>
+				</div>
+				
+				<div class="col-lg-3">
+					<a href="https://www.linkedin.com/in/joe-phearse-70162bbb?trk=nav_responsive_tab_profile"><i class="fa fa-linkedin" target="_blank"></i></a>
+				</div>
+				<div class="col-lg-3">
+					<a href="#"><i class="fa fa-instagram" target="_blank"></i></a>
+				</div>
+				
+			
+			</div><!--/row -->
+		</div><!--/container -->
+	</div><!--/social -->
 
 	<div id="footerwrap">
 		<div class="container">
