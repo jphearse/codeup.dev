@@ -22,6 +22,8 @@ var disgeorge;
 if (ryan >=200){
 	disryan = ryan - (ryan*dicount);
 	console.log ("Ryan spent " + ryan + " discount was applied" + " Ryan final price " + disryan);
+} else	{
+	console.log ("Ryan spent " + ryan + " discount was not applied" + "Ryan final price " + ryan)
 }
 
 if (cameron >=200){
@@ -34,6 +36,8 @@ if (cameron >=200){
 if (george >=200){
 	disgeorge = george - (george*dicount);
 	console.log ("George spent " + george + " discount was applied" + " George final price " + disgeorge);
+} else {
+	console.log	("George spent " + george + " discount was not applied" + " George final price " + george);
 }
 
 /*Coin flip*/
