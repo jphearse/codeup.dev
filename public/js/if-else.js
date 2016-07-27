@@ -40,7 +40,7 @@ if (george >=200){
 	console.log	("George spent " + george + " discount was not applied" + " George final price " + george);
 }
 
-/*Coin flip*/
+/*Coin flip example*/
 var flipACoin = Math.floor(Math.random()* 2)
 
 if (flipACoin == 0){
