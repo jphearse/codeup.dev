@@ -138,6 +138,7 @@ ul{
 
 .navbar-default .navbar-nav > li > a {
 	color: #1abc9c;
+	font-size: 1.5em;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -149,7 +150,7 @@ ul{
    Wrap Sections
    ========================================================================== */
 #works{
-	background-color: #f2f2f2;
+	background-color: ;
 }
 
 #headerwrap {
