@@ -209,24 +209,25 @@
 		<div class="row centered mt mb">
 			<h1>My Portfolio</h1>
 			
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">First Project
-				
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="work.html"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">Second Project
-				
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="work.html"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">Third Project
-				
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="work.html"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">Fourth Project
-				
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="work.html"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">Fifth Project
-				
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="work.html"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">Sixth Project
-				
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="work.html"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
+
 		</div><!--/row -->
 	</div><!--/container -->
 	</section>
@@ -242,10 +243,10 @@
 				</div>
 				
 				<div class="col-lg-3">
-					<a href="https://www.linkedin.com/in/joe-phearse-70162bbb?trk=nav_responsive_tab_profile"><i class="fa fa-linkedin" target="_blank"></i></a>
+					<a href="https://www.linkedin.com/in/joe-phearse-70162bbb?trk=nav_responsive_tab_profile" target="_blank"><i class="fa fa-linkedin"></i></a>
 				</div>
 				<div class="col-lg-3">
-					<a href="#"><i class="fa fa-instagram" target="_blank"></i></a>
+					<a href="https://www.instagram.com/jphearse/?hl=en" target="_blank"><i class="fa fa-instagram" ></i></a>
 				</div>
 				
 			
