@@ -41,7 +41,7 @@ if (george >=200){
 }
 
 /*Coin flip example*/
-var flipACoin = Math.floor(Math.random()* 2)
+var flipACoin = Math.floor(Math.random()* 2);
 
 if (flipACoin == 0){
 	console.log ("Buy a car");
