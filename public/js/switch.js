@@ -1,7 +1,8 @@
 "use strict";
 
 var luckyNumber = Math.floor(Math.random()* 6);
-
+console.log("Price before discount: $60");
+console.log("Lucky number: " + luckyNumber);
 switch (luckyNumber) {
 	case 0:
 	console.log("You have to pay $" + (60));
@@ -67,5 +68,5 @@ switch (monthNumber){
 	break;
 
 	default:
-	console.log("Unknown");
+	console.log("Not a number 1-12");
 }
