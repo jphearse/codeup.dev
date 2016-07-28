@@ -10,8 +10,7 @@ do {
 	if (allCones >= cones){
 		allCones = allCones - cones;
 		console.log("cones sold " + cones);
-	}
-	else {
+	} else {
 		console.log ("Cannot sell you " + cones + " I only have " + allCones);
 	}
 
