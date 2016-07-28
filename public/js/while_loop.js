@@ -1,7 +1,8 @@
 "use strict";
 
+
+/*Ice Cream Cone Example*/
 var allCones = Math.floor(Math.random() * 50) + 50;
-var remainingCones;
 
 do {
 	var cones = Math.floor(Math.random() * 5) + 1;
@@ -11,19 +12,17 @@ do {
 		console.log("cones sold " + cones);
 	}
 	else {
-			console.log ("Cannot sell you " + cones + " I only have " + allCones);
+		console.log ("Cannot sell you " + cones + " I only have " + allCones);
 	}
 
 } while (allCones > 0 ); 
-console.log("Sold them all")
+console.log("Sold them all");
 
 
-
-
-/*
+/*Counting Example*/
 var i = 1;
 while (i <65536) {
 	i = i*2;
 	console.log	(i);
 }
-*/
+
