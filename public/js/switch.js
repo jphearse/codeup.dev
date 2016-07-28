@@ -1,23 +1,29 @@
 "use strict";
 
 var luckyNumber = Math.floor(Math.random()* 6);
-console.log("Price before discount: $60");
+var priceBeforeDiscount = 60;
+var discountPecent;
+console.log("Price before discount: " + priceBeforeDiscount);
 console.log("Lucky number: " + luckyNumber);
 switch (luckyNumber) {
 	case 0:
-	console.log("You have to pay $" + (60));
+	console.log("You have to pay $" + (priceBeforeDiscount));
 	break;
 	case 1:
-	console.log("You have to pay $" + (60-(60*.1)));
+	discountPecent = .1;
+	console.log("You have to pay $" + (priceBeforeDiscount-(priceBeforeDiscount*discountPecent)));
 	break;
 	case 2:
-	console.log("You have to pay $" + (60-(60*.25)));
+	discountPecent = .25;
+	console.log("You have to pay $" + (priceBeforeDiscount-(priceBeforeDiscount*.25)));
 	break;
 	case 3:
-	console.log("You have to pay $" + (60-(60*.35)));
+	discountPecent = .35;
+	console.log("You have to pay $" + (priceBeforeDiscount-(priceBeforeDiscount*.35)));
 	break;
 	case 4:
-	console.log("You have to pay $" + (60-(60*.50)));
+	discountPecent = .50;
+	console.log("You have to pay $" + (priceBeforeDiscount-(priceBeforeDiscount*.50)));
 	break;
 	case 5:
 	console.log("You have to pay $" + (0));
