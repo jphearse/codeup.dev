@@ -3,7 +3,7 @@
 
 /*Ice Cream Cone Example*/
 var allCones = Math.floor(Math.random() * 50) + 50;
-
+console.log("Starting with " + allCones + " cones");
 do {
 	var cones = Math.floor(Math.random() * 5) + 1;
 	
