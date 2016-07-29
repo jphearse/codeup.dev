@@ -11,7 +11,7 @@
     <title>Joe Phearse</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <!-- Bootstrap core CSS -->
-    <
+    
 
     <!-- Custom styles for this template -->
     <link href="/css/welcome.css" rel="stylesheet">
@@ -58,10 +58,11 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
-					
+					<div class="avatar">
+                    	<img alt="" src=/img/me.jpg>
+                	</div>
 					<h1 class="about">Joe Phearse</h1>
 					<h3 class="about">Jphearse@gmail.com</h3>
-
 				</div>
 			</div><!--/row -->
 	    </div> <!-- /container -->
@@ -71,6 +72,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
+
 				</div>
 			</div><!--/row -->
 	    </div> <!-- /container -->
@@ -83,7 +85,7 @@
 		<div class="row centered mt mb">
 			<div class="col-lg-8 col-lg-offset-2">
 
-				<h1>Joe D. Phearse</h1>
+				<h1>About Me</h1>
 
 				<div>
 					<img id="pic-of-me" src="/img/collage.jpg">	<br><br>
