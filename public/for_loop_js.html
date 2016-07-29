@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Loop Exercise</title>
+</head>
+<body>
+
+
+    <script>
+    	"use strict";
+    	/*
+        for (var i = 1; i <= 5; i += 1){
+        	for (var j = 0; j<= 59; j+=1 )
+        		console.log(i + ":" + j)
+        }*/
+
+
+
+        for (i=1; i <=10; i+=1){
+        	
+        	var number = i;
+        	var n = number.toString();
+        	if ( i <= 9){
+        		console.log(n.repeat(i));
+        	} else {
+        		n = 0;
+        		var n = n.toString();
+        		console.log(n.repeat(10));
+        	}
+        }
+
+       	var random = 12;
+        for (var i = random; i <= random; i += 1) {
+
+        	for(var j = 1; j <=10; j+= 1){
+        		var product = i*j;
+        		console.log(i + "x" + j + "=" +product);
+        	}
+        }
+
+       
+		var ran = Math.floor(Math.random() * 180) + 20;
+		var modulus;
+		for (var i = 1; i <=1 ; i+=1)
+			modulus = ran % 2;
+			if(modulus == 0) {
+				console.log(ran +" is an even number");
+			} else {
+				console.log(ran + " is an odd number")
+			}
+
+
+
+
+        for (var i = 100; i >= 5; i -= 5) {
+        	console.log(i);
+        }
+
+
+    </script>
+</body>
+</html>
