@@ -29,28 +29,27 @@
         	}
         }
 
-       	var random = 12;
-        for (var i = random; i <= random; i += 1) {
+        console.log("\n ");
 
+       	var random = Math.floor(Math.random() * 20) + 1;
         	for(var j = 1; j <=10; j+= 1){
-        		var product = i*j;
-        		console.log(i + "x" + j + "=" +product);
+        		var product = random*j;
+        		console.log(random + "x" + j + "=" +product);
         	}
-        }
-
-       
+        
+        	console.log("\n ");
 		
 		for (var i = 1; i <= 10 ; i+=1){
-		var ran = Math.floor(Math.random() * 180) + 20;
-			var modulus = ran % 2;
+			var randomNumber = Math.floor(Math.random() * 180) + 20;
+			var modulus = randomNumber % 2;
 			if(modulus == 0) {
-				console.log(ran +" is an even number");
+				console.log(randomNumber +" is an even number");
 			} else {
-				console.log(ran + " is an odd number")
+				console.log(randomNumber + " is an odd number")
 			}
 		}	
 
-
+		console.log("\n ");
 
         for (var i = 100; i >= 5; i -= 5) {
         	console.log(i);
