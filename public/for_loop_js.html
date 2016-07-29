@@ -8,11 +8,11 @@
 
     <script>
     	"use strict";
-    	/*
+    	
         for (var i = 1; i <= 5; i += 1){
         	for (var j = 0; j<= 59; j+=1 )
         		console.log(i + ":" + j)
-        }*/
+        }
 
 
 
@@ -33,16 +33,15 @@
 
        	var random = Math.floor(Math.random() * 20) + 1;
         	for(var j = 1; j <=10; j+= 1){
-        		var product = random*j;
-        		console.log(random + "x" + j + "=" +product);
+        		var product = random * j;
+        		console.log(random + "x" + j + "=" + product);
         	}
         
-        	console.log("\n ");
+        console.log("\n ");
 		
 		for (var i = 1; i <= 10 ; i+=1){
 			var randomNumber = Math.floor(Math.random() * 180) + 20;
-			var modulus = randomNumber % 2;
-			if(modulus == 0) {
+			if(randomNumber % 2 == 0) {
 				console.log(randomNumber +" is an even number");
 			} else {
 				console.log(randomNumber + " is an odd number")
