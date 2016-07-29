@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Loop Exercise</title>
+</head>
+<body>
+
+
+    <script>
+    	"use strict";
+    	do{
+    	var random = Math.floor((Math.random()*50)+1);
+		} while (random % 2 == 0)
+    	console.log("Odd number to skip "+ random);
+
+    	for (var i = 1; i < 50; i++) {
+    	if (i == random){
+    		console.log("Yikes! skipping number: " + random);
+    		continue;
+    	}
+    	if (i % 2 == 0) {
+        continue;
+    }
+    console.log('Here is an odd number: ' + i);
+}
+    </script>
+</body>
+</html>
