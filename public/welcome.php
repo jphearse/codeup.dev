@@ -59,7 +59,7 @@
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
 					<div class="avatar">
-                    	<img alt="" src=/img/me.jpg>
+                    	<img alt="" src=/img/meedited.jpg>
                 	</div>
 					<h1 class="about">Joe Phearse</h1>
 					<h3 class="about">Jphearse@gmail.com</h3>
@@ -106,10 +106,11 @@
 				
 					<p class="alignleft1"><strong>M.A. in Education,</strong> <em>Concentration in Instructional Technology</em></p>
 				
-				
 					<p class="alignright1">August 2015 - Present</p>
 				
 				</div>
+				
+				
 				<div style="clear: both;"></div>
 				<div id="textbox">
 				
