@@ -36,7 +36,6 @@ function hebDiscount (name, amount){
 		return name + " did not recieve the discount, final price $" + amount;
 	}
 }
- 
 
 
 if (ryan >=200){
@@ -75,3 +74,8 @@ function coinFlip (){
 		flipACoin = (flipACoin == 0) ? "Heads" : "Tails";
 		return flipACoin;
 }
+coinFlip();
+
+// in javascript if no return it returns undefined
+
+

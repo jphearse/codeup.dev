@@ -28,3 +28,5 @@ function isOdd (x){
 }
 // TODO: Call the function 'isOdd' passing the variable 'random' as a parameter.
 isOdd (random)
+
+// in javascript if no return it returns undefined
