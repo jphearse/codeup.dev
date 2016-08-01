@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline JS</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        
+        function add (a, b){
+        	if (isNaN(a)){
+        		return "Input must be a number";
+        	} else if( isNaN(b)){
+        		return "Input must be a number";
+        	}
+        	return a + b;
+        }
+        function subtract (a, b){
+        	if (isNaN(a)){
+        		return "Input must be a number";
+        	} else if( isNaN(b)){
+        		return "Input must be a number";
+        	}
+        	return a - b;
+        }
+        function multiply (a, b){
+        	if (isNaN(a)){
+        		return "Input must be a number";
+        	} else if( isNaN(b)){
+        		return "Input must be a number";
+        	}
+        	return a * b;
+        }
+        function divide(a, b){
+        	if (isNaN(a)){
+        		return "Input must be a number";
+        	} else if( isNaN(b)){
+        		return "Input must be a number";
+        	}
+        	if (b == 0) {
+        		return "cannot divide by 0";
+        	}
+        	return a / b;
+        }
+        function square (a){
+        	if (isNaN(a)){
+        		return "Input must be a number";
+        	} 
+        	return multiply (a , a);
+        }
+        function sumTwoSquares (a, b){
+        	if (isNaN(a)){
+        		return "Input must be a number";
+        	} else if( isNaN(b)){
+        		return "Input must be a number";
+        	}
+        	var sum1 = multiply (a , a);
+        	var sum2 = multiply (b , b);
+        	return add(sum1, sum2);
+
+        }
+        function isNumeric(number){
+        	return !isNaN(number);
+        }
+
+    </script>
+</body>
+</html>
