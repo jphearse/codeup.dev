@@ -10,6 +10,13 @@ if ((test1 + test2 + test3)/ 3 >= 80) {
 } else  {
 	console.log("You need to practice more")
 }
+
+
+function average (a, b, c){
+	var average = ((a + b + c)/3 >= 80) ? "You're awesome!" : "You need more practice";
+	console.log((a + b + c)/3);
+	return average;
+}
 /*HEB example*/
 var ryan = 250;
 var cameron = 180;
@@ -18,6 +25,19 @@ var dicount = .35;
 var disryan;
 var discameron;
 var disgeorge;
+
+
+
+function hebDiscount (name, amount){
+	if (amount >= 200){
+	var discounted = amount - (amount*dicount);
+	return name + " recieved the discount, final price is $" + discounted;
+	} else	{
+		return name + " did not recieve the discount, final price $" + amount;
+	}
+}
+ 
+
 
 if (ryan >=200){
 	disryan = ryan - (ryan*dicount);
@@ -47,4 +67,11 @@ if (flipACoin == 0){
 	console.log ("Buy a car");
 } else {
 	console.log ("Buy a house");
+}
+
+
+function coinFlip (){
+	var flipACoin = Math.floor(Math.random()* 2);
+		flipACoin = (flipACoin == 0) ? "Heads" : "Tails";
+		return flipACoin;
 }
