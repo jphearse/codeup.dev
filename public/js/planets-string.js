@@ -18,11 +18,14 @@
                 
                 var secondString ="";
                 for (var i = 0; i < planetsArray.length; i++){
-                    secondString += "<li>"+planetsArray[i]+"</li>"; //creates opening and closing tags around each element
-                   
+                    secondString += "<li>"+planetsArray[i]+"</li>"; //creates opening and closing tags around each element     
                 }
                 console.log("<ul>"+secondString+"</ul>");
                 
+                //alternative solution
+                var string = planetsArray.join("</li><li>"); //</li><li> goes b/w planets
+                string = "<ul><li>"+ string + "</li></ul>"; //"<ul><li>" *Planet*</li><li>*Planet* "</li></ul>"
+                console.log(string);
             
                
 })();
