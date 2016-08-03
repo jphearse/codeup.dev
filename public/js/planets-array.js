@@ -57,12 +57,12 @@
     logPlanets();
 })();
 
-/*function sample (arr){
+function sample (arr){
     var element = arr[Math.floor(Math.random() * arr.length)];
       return element;
          
 }
-console.log (sample ([1,2,3,4]));*/
+console.log (sample ([1,2,3,4]));
 
 
 
