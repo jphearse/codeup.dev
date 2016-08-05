@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
+
 </head>
-<body>
+<body onmousemove="function coordinates(event)">
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
@@ -24,15 +25,14 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-<p class="sub-paragraph">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat. Duis aute irure dolor in
-    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.
-</p>
+
+<p id="location"></p>
+
+<button id="button1">Step 1</button><br>
+<button id="button2">Step 2</button><br>
+<button id="button3">Step 3</button><br>
+<button id="button4">Step 4</button>
+
 <script>
     (function() {
         "use strict";
@@ -40,33 +40,60 @@
         var mainHeader = document.querySelector("#main-header");
         
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        var headerMain = function (event){
+            mainHeader.innerHTML = "JavaScript is Cool";
+       }
+        
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.querySelector("#sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        var headerSub = function (event){
+            subHeader.style.color = "blue";
+        }
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
         
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        for(var i = 0; i < listItems.length; i++){
+       var list = function (){ 
+            for(var i = 0; i < listItems.length; i++){
             var dbid = listItems[i].getAttribute('data-dbid');
-            if(dbid == 1){
-                listItems[i].style.color = "blue";
-            } else if (i % 2 == 0){
-                listItems[i].style.color = "grey";
-            }
+                if(dbid == 1){
+                    listItems[i].style.color = "blue";
+                } else if (i % 2 == 0){
+                    listItems[i].style.color = "grey";
+                }
         }
-                
+        }
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         //var subParagraphs = document.getElementsByClassName("sub-paragraph");
         var subParagraphs = document.querySelectorAll(".sub-paragraph");
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        var missionAccomplished = function() {
         subParagraphs[0].innerHTML = "Mission Accomplished";
-        subParagraphs[1].innerHTML = "Mission Accomplished";
+        }
+
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+        var button3 = document.getElementById("button3");
+        var button4 = document.getElementById("button4");
+        button1.addEventListener("click", headerMain);
+        button2.addEventListener("click", headerSub);
+        button3.addEventListener("click", list);
+        button4.addEventListener("click", missionAccomplished);
+
+        var example = document.getElementsByTagName("body");
+        example[0].addEventListener("mousemove", coordinates);
+
+        var location = document.getElementById("location");
+        var coordinates = function (event){
+            var x = e.clientX;
+            var y = e.clientY;
+            var coor = x +","+ y;
+            location.innerHTML = coor;
+            }
 
     })();
 </script>
