@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" href="/css/calculator.css">
+</head>
+<body>
+<div id="background">
+<form id="calculator">
+<input id="input" type="text" name="left">
+<input id="inputMiddle" type="text" name="middle">
+<input id="inputRight" type="text" name="right">
+
+</form>
+
+
+	<button class="num">1</button>
+	<button class="num">2</button>
+	<button class="num">3</button>
+	<button id="opAdd">+</button><br>
+
+	<button class="num">4</button>
+	<button class="num">5</button>
+	<button class="num">6</button>
+	<button id="opSubtract">-</button><br>
+
+	<button class="num">7</button>
+	<button class="num">8</button>
+	<button class="num">9</button>
+	<button id="opMultiply">*</button><br>
+
+	<button id="opClear">C</button>
+	<button  class="num">0</button>
+	<button id="opEqual">=</button>
+	<button id="opDivide">/</button>
+
+</div>
+<script>
+(function() {
+//numbers//////////////////////////////////////////////////////////
+
+
+	var numberButtons = document.getElementsByClassName("num");
+
+	var num = function (e){
+		if (inputMiddle.value == ""){
+        calculator.input.value += this.innerText;
+		} else {
+			calculator.inputRight.value += this.innerText;
+		}
+   	}
+
+	for (var i = 0; i < numberButtons.length; i++) {
+		var button = numberButtons[i];
+		button.addEventListener("click", num);
+	}
+
+
+	var symbolEqual = function (e){
+			var left = input.value;
+			var right = inputRight.value;
+			var problem = left + inputMiddle.value + right;
+			console.log(eval(problem));
+			calculator.input.value = eval(problem);
+			inputRight.value = "";
+       }
+	var opEqual = document.getElementById("opEqual");	
+	opEqual.addEventListener("click", symbolEqual);
+
+	var symbolClear = function (e){
+			input.value = "";
+            inputMiddle.value = "";
+			inputRight.value = "";
+       }
+	var opClear = document.getElementById("opClear");	
+	opClear.addEventListener("click", symbolClear);
+
+//Operators//////////////////////////////////////////////////////////
+	
+	var symbolAdd = function (e){
+            calculator.inputMiddle.value += opAdd.innerText;
+       }
+	var opAdd = document.getElementById("opAdd");	
+	opAdd.addEventListener("click", symbolAdd);
+
+	var symbolSubtract = function (e){
+            calculator.inputMiddle.value += opSubtract.innerText;
+       }
+	var opSubtract = document.getElementById("opSubtract");	
+	opSubtract.addEventListener("click", symbolSubtract);
+
+	var symbolMulitply = function (e){
+            calculator.inputMiddle.value += opMultiply.innerText;
+       }
+	var opMultiply = document.getElementById("opMultiply");	
+	opMultiply.addEventListener("click", symbolMulitply);
+
+	var symbolDivide = function (e){
+            calculator.inputMiddle.value += opDivide.innerText;
+       }
+	var opDivide = document.getElementById("opDivide");	
+	opDivide.addEventListener("click", symbolDivide);
+
+
+
+
+
+	
+ })();
+</script>
+</body>
+</html>
