@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="/css/calculator.css">
 </head>
 <body>
+<h2>JavaScript Calculator</h2>
 <div id="background">
 <form id="calculator">
 <input id="input" type="text" name="left">
@@ -13,26 +14,30 @@
 
 </form>
 
+	<button class="oper">^2</button>
+	<button class="oper">%</button>
+	<button class="oper">√</button>
+	<button class="oper">+</button><br>
 
 	<button class="num">1</button>
 	<button class="num">2</button>
 	<button class="num">3</button>
-	<button class="oper">+</button><br>
+	<button class="oper">-</button><br>
 
 	<button class="num">4</button>
 	<button class="num">5</button>
 	<button class="num">6</button>
-	<button class="oper">-</button><br>
+	<button class="oper">*</button><br>
 
 	<button class="num">7</button>
 	<button class="num">8</button>
 	<button class="num">9</button>
-	<button class="oper">*</button><br>
+	<button class="oper">/</button><br>
 
-	<button id="opClear">C</button>
 	<button  class="num">0</button>
-	<button id="opEqual">=</button>
-	<button class="oper">/</button>
+	<button class="num">.</button>
+	<button id="opClear">C</button>
+	<button id="opEqual">=</button><br>
 
 </div>
 <script>
@@ -43,15 +48,25 @@
 	var numberButtons = document.getElementsByClassName("num");
 	var operatorButtons = document.getElementsByClassName("oper");
 
-	var num = function (e){					//if the middle input is empty, if it has operator then puts numbers on right
+	var num = function (e){		//if the middle input is empty, if it has operator then puts numbers on right
 		if (inputMiddle.value == ""){
-        calculator.input.value += this.innerText;
+        		if (input.value.length < 8){
+        		calculator.input.value += this.innerText;
+        		}
 		} else {
-			calculator.inputRight.value += this.innerText;
+				if(inputMiddle.value == "√" || inputMiddle.value == "^2" || inputMiddle.value == "%"){
+					calculator.inputRight.value = '';
+					calculator.input.value += this.innerText;
+		} 		else{
+						if (inputRight.value.length < 8){
+						calculator.inputRight.value += this.innerText;
+        			}
+				
+				}
 		}
    	}
    	var oper = function (e){
-            calculator.inputMiddle.value += this.innerText;
+            calculator.inputMiddle.value = this.innerText;
        }
        
 	for (var i = 0; i < numberButtons.length; i++) {		//adds event listener to all buttoms with class num
@@ -67,24 +82,8 @@
 			var left = parseFloat(input.value);
 			var right = parseFloat(inputRight.value);
 			
-			function add (a, b){
-				var answer = a + b;
-				return answer;
-			}
-			function subtract (a, b){
-				var answer = a - b;
-				return answer;
-			}
-			function multiply (a, b){
-				var answer = a * b;
-				return answer;
-			}
-			function divide (a, b){
-				var answer = a / b;
-				return answer;
-			}
 			if (inputMiddle.value ==="+"){
-				input.value	= left + right;
+				input.value	= (left + right);
 				console.log(parseFloat(input.value));
 			}
 			if (inputMiddle.value ==="-"){
@@ -99,7 +98,18 @@
 				input.value	= left / right;
 				console.log(parseFloat(input.value));
 			}
-
+			if (inputMiddle.value ==="√"){
+				input.value = Math.sqrt(left);
+				console.log(parseFloat(input.value));
+			}
+			if (inputMiddle.value ==="^2"){
+				input.value	= (left*left);
+				console.log(parseFloat(input.value));
+			}
+			if (inputMiddle.value ==="%"){
+				input.value	= left/100;
+				console.log(parseFloat(input.value));
+			}
 			inputRight.value = "";
        }
 	var opEqual = document.getElementById("opEqual");	

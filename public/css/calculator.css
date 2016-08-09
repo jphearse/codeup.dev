@@ -1,43 +1,75 @@
+@keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 100% 75%; }
+}
+
+button:focus {
+    outline:0;
+}
+input:focus{
+    outline:0;
+}
+h2{
+    font-family: helvetica;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .num, .oper, #opClear, #opEqual {
+    box-shadow: 3px 3px 3px #404040;
     background-color: #4d4d4d;
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     height: 50px;
     width: 70px;
+    border-radius: 5px
+}
+#opClear{
+    background-color: #ff0000;
 }
 .num{
     background-color: #1a53ff;
+
 }
 .num:hover{
     background-color: #0039e6;
 }
-#opAdd:hover, #opSubtract:hover, #opMultiply:hover, #opDivide:hover, #opClear:hover, #opEqual:hover{
+
+.oper:hover, #opEqual:hover{
     background-color: #333333;
 }
+#opClear:hover{
+    background-color: #e60000;
+}
 #inputMiddle{
-    background-color:#C0C0C0;
+    background-color: #d9d9d9;
     width: 20px;
     padding: 10px;
     border: solid 5px ;
     transition: border 0.3s;
     font-size: 20px;
+    border-radius: 8px;
 }
+
 #input, #inputRight {
-    background-color:#C0C0C0;
+    background-color:#d9d9d9;
     font-size: 20px;
     width: 97px;
     padding: 10px;
     border: solid 5px black;
-    transition: border 0.3s;   
+    transition: border 0.3s;
+    border-radius: 8px; 
 }
 #background{
     text-align: center;
-    width: 350px;
+    height: 350px;
+    width: 330px;
     background-color: #000000;
+    padding-top: 10px;
+    border-radius: 10px;
+    background-image: url("/img/space2.jpg");
+    animation: animatedBackground 25s linear infinite;
 }
