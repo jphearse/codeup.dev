@@ -17,51 +17,89 @@
 	<button class="num">1</button>
 	<button class="num">2</button>
 	<button class="num">3</button>
-	<button id="opAdd">+</button><br>
+	<button class="oper">+</button><br>
 
 	<button class="num">4</button>
 	<button class="num">5</button>
 	<button class="num">6</button>
-	<button id="opSubtract">-</button><br>
+	<button class="oper">-</button><br>
 
 	<button class="num">7</button>
 	<button class="num">8</button>
 	<button class="num">9</button>
-	<button id="opMultiply">*</button><br>
+	<button class="oper">*</button><br>
 
 	<button id="opClear">C</button>
 	<button  class="num">0</button>
 	<button id="opEqual">=</button>
-	<button id="opDivide">/</button>
+	<button class="oper">/</button>
 
 </div>
 <script>
 (function() {
-//numbers//////////////////////////////////////////////////////////
+//numbers & functions//////////////////////////////////////////////////////////
 
 
 	var numberButtons = document.getElementsByClassName("num");
+	var operatorButtons = document.getElementsByClassName("oper");
 
-	var num = function (e){
+	var num = function (e){					//if the middle input is empty, if it has operator then puts numbers on right
 		if (inputMiddle.value == ""){
         calculator.input.value += this.innerText;
 		} else {
 			calculator.inputRight.value += this.innerText;
 		}
    	}
-
-	for (var i = 0; i < numberButtons.length; i++) {
+   	var oper = function (e){
+            calculator.inputMiddle.value += this.innerText;
+       }
+       
+	for (var i = 0; i < numberButtons.length; i++) {		//adds event listener to all buttoms with class num
 		var button = numberButtons[i];
 		button.addEventListener("click", num);
 	}
-
+	for (var i = 0; i < operatorButtons.length; i++){		//adds event listener to buttons iwth class oper
+		var operButton = operatorButtons[i];
+		operButton.addEventListener("click", oper);
+	}
 
 	var symbolEqual = function (e){
-			var left = input.value;
-			var right = inputRight.value;
-			var problem = left + inputMiddle.value + right;
-			console.log(eval(problem));
-			calculator.input.value = eval(problem);
+			var left = parseFloat(input.value);
+			var right = parseFloat(inputRight.value);
+			
+			function add (a, b){
+				var answer = a + b;
+				return answer;
+			}
+			function subtract (a, b){
+				var answer = a - b;
+				return answer;
+			}
+			function multiply (a, b){
+				var answer = a * b;
+				return answer;
+			}
+			function divide (a, b){
+				var answer = a / b;
+				return answer;
+			}
+			if (inputMiddle.value ==="+"){
+				input.value	= left + right;
+				console.log(parseFloat(input.value));
+			}
+			if (inputMiddle.value ==="-"){
+				input.value	= left - right;
+				console.log(parseFloat(input.value));
+			}
+			if (inputMiddle.value ==="*"){
+				input.value	= left * right;
+				console.log(parseFloat(input.value));
+			}
+			if (inputMiddle.value ==="/"){
+				input.value	= left / right;
+				console.log(parseFloat(input.value));
+			}
+
 			inputRight.value = "";
        }
 	var opEqual = document.getElementById("opEqual");	
@@ -75,37 +113,7 @@
 	var opClear = document.getElementById("opClear");	
 	opClear.addEventListener("click", symbolClear);
 
-//Operators//////////////////////////////////////////////////////////
-	
-	var symbolAdd = function (e){
-            calculator.inputMiddle.value += opAdd.innerText;
-       }
-	var opAdd = document.getElementById("opAdd");	
-	opAdd.addEventListener("click", symbolAdd);
 
-	var symbolSubtract = function (e){
-            calculator.inputMiddle.value += opSubtract.innerText;
-       }
-	var opSubtract = document.getElementById("opSubtract");	
-	opSubtract.addEventListener("click", symbolSubtract);
-
-	var symbolMulitply = function (e){
-            calculator.inputMiddle.value += opMultiply.innerText;
-       }
-	var opMultiply = document.getElementById("opMultiply");	
-	opMultiply.addEventListener("click", symbolMulitply);
-
-	var symbolDivide = function (e){
-            calculator.inputMiddle.value += opDivide.innerText;
-       }
-	var opDivide = document.getElementById("opDivide");	
-	opDivide.addEventListener("click", symbolDivide);
-
-
-
-
-
-	
  })();
 </script>
 </body>
