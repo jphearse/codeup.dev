@@ -9,7 +9,10 @@
             center: {
                 lat:  29.426791,
                 lng: -98.489602
-            }
+            },
+
+            mapTypeId: google.maps.MapTypeId.SATELLITE
+
         };
 
 
@@ -44,9 +47,11 @@
         });
 
         var infoWindow = new google.maps.InfoWindow({
-            content: "La Gloria"
+            content: "<h3>La Gloria</h3 <ul><li>Good Food</li><li>Good Margaritas</li></ul>"
         });
 
-        infoWindow.open(map, marker);
+        google.maps.event.addListener(marker, 'click', function() {         //info pops up when marker clicked
+        infoWindow.open(map,marker);
+      });
   
     })();
