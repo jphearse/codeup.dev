@@ -53,6 +53,30 @@
 	  <dt>How Much Does Yellowstone cost?</dt>
 	  <dd class="invisible">Entrance to see Old Faithful, the Grand Canyon of the Yellowstone and other wonders of America’s first national park comes with a small price tag.</dd>
 	</dl>
+	<h3>Big Bend</h3>
+	<ul>
+		<li>Big bend is the only state park to have an entire mountain range within its borders.</li>
+		<li>Big bend is larger than the state of Rhode Island.</li>
+		<li>The park is named after the "big bend" in the Rio Grande in west Texas.</li>
+		<li>The treaty of Guadalupe Hidalgo was signed and claimed the Rio Grande as the official border of Texas and mexico.</li>
+	</ul>
+	<h3>Yellowstone</h3>
+	<ul>
+		<li>In 2010, Yellowstone had the highest visitation year on record with 3,640,184 visitors</li>
+		<li>President Ulysses S. Grant established Yellowstone as the world’s first National Park on March 1, 1872.</li>
+		<li>At 28,000 square acres (44 square miles), Yellowstone is the largest intact temperate ecosystem in the world</li>
+		<li>Yellowstone has the largest, free-roaming herd of bison in the world</li>
+	</ul>
+	<h3>Yosemite</h3>
+	<ul>
+		<li>El Capitan is the largest granite block in the world</li>
+		<li>There are 747,956 acres of land in Yosemite National Park</li>
+		<li>Ribbon Falls in Yosemite National Park is 9 times larger than Niagra Falls</li>
+		<li>Mountains at Yosemite National Park are still growing at a rate of 1 foot per 1,000 years</li>
+	</ul>
+
+
+
 	</div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -63,8 +87,17 @@
         	$(".answers").click(function(event){ //added click event to link
 
         		$("dd").toggleClass("invisible"); // for dd toggle the class invisible
+        	});
 
-       		 });
+        	$("ul").each(function(index){
+        		console.log(this);
+        		$(this).children().first().css("font-weight", "bold");
+        	});
+        	
+        	$("li").click(function(event){
+        		$(this).parent().addClass("invisible");
+        	
+        	});
         });
 </script>
 </body>
