@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+
+    <style>
+    	.box{
+    		margin-top: 250px;
+    		margin-left:-600px;
+    		height: 201px;
+    		width: 320px;
+    	}
+    </style>
+</head>
+<body>
+    <h1>Konami Code</h1>
+    <div class="box"></div>
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function() {
+
+        var i = 0;
+
+        $(document).keyup(function(event){
+            console.log(event.keyCode);
+
+        var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13]; //codes for keys that need to be pressed
+        
+        if (event.keyCode == konamiCode[i]){ // if keycode is equal to konami code first element go to next element...
+        	i++;
+        } else {	// if wrong key presesed set i back to 0
+        	i = 0;
+        	console.log("Start Over");
+        }
+
+        if (i == 11){				// if all keys pressed in order run this code
+        	console.log("Correct Code Entered");
+        	
+        	$("h1").css("color", "red");
+        	$("body").css({
+        		"background-image": "url(/img/space2.jpg)", 
+        		"background-size": "cover", 
+        		"backgroundRepeat":"no-repeat"
+        	});
+        	$(".box").css("background-image", "url(/img/space-cat.png)");
+        	$(".box").css("position", "relative;");
+ 	       	$('.box').animate({'marginLeft' : "+=3000px"}, 9000); //grow margin on the left
+ 	       	i = 0;
+
+ 	       	var timeoutId = setTimeout(function () {
+ 			  $("body").removeAttr('style');
+ 			  $("h1").removeAttr('style');
+ 			  $(".box").removeAttr('style');
+			}, 10000);
+ 	       }
+        });
+        
+        	
+    	
+        });
+        
+    </script>
+</body>
+</html>
