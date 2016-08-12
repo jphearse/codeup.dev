@@ -86,7 +86,7 @@
 
         	$(".answers").click(function(event){ //added click event to link
 
-        		$("dd").toggleClass("invisible"); // for dd toggle the class invisible
+        		$("dd").toggle(); // for dd toggle the class invisible
         	});
 
         	$("ul").each(function(index){
@@ -95,7 +95,7 @@
         	});
         	
         	$("li").click(function(event){
-        		$(this).parent().addClass("invisible");
+        		$(this).parent().hide();
         	
         	});
         });
