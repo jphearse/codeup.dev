@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ National Parks</title>
+	<style>
+		.invisible{
+			display: none;
+		}
+		a:link, a:visited {
+	    background-color: #f44336;
+	    color: white;
+	    padding: 14px 25px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+		}
+		a:hover, a:active {
+		    background-color: red;
+		}
+		body{
+			background-size: cover;
+			background-image: url("/img/park.jpg");
+		}
+		#background{
+			background-color: rgba(192,192,192,0.6);
+			
+		}
+	</style>
+</head>
+<body>
+<h1>FAQ National Parks</h1>
+<a href="#" class="answers">Press here to hide and unhide answers</a>
+	<div id="background">
+	<dl>
+	  <dt>Do Cell Phones Work in Yellowstone?</dt>
+	  <dd class="invisible">Cell phone service is available in over 50 percent of the park.</dd>
+	  <dt>Can I Bring My Pet to Yellowstone?</dt>
+	  <dd class="invisible">Pets are prohibited throughout most areas in national parks.</dd>
+	  <dt>Are Yellowstone Hotels and Campgrounds Open in Winter?</dt>
+	  <dd class="invisible">Many of Yellowstone’s hotels and cabins, including the famous Old Faithful Inn, are only open during the summer season.</dd>
+	  <dt>Do I need a car to tour Yellowstone?</dt>
+	  <dd class="invisible">During the summer season, cars are the best option for taking a trip around Yellowstone unless you are riding with a bus tour or concessionaire that provides transportation. </dd>
+	  <dt>Has Anyone Ever Fallen into a Geyser?</dt>
+	  <dd class="invisible">Visitors have in the past slipped and fallen into hot springs, or were severely injured with burns from erupting geysers, but it is extremely rare.</dd>
+	  <dt>How Can I Avoid the Crowds at Old Faithful?</dt>
+	  <dd class="invisible">Every year, Yellowstone draws in nearly three million visitors—most of them eager to see Old Faithful. The busy days of June through September.</dd>
+	  <dt>How close can I get to wild animals in Yellowstone?</dt>
+	  <dd class="invisible">Stay at least 100 yards away from bears and wolves and at least 25 yards away from other large mammals like bison, elk, bighorn sheep, deer, moose and coyotes.</dd>
+	  <dt>When is the Best Season to Visit Yellowstone?</dt>
+	  <dd class="invisible"> Every season brings not only a new landscape to the park, but a variety of exhilarating seasonal pursuits in Yellowstone.</dd>
+	  <dt>Is Yellowstone Going to Blow?</dt>
+	  <dd class="invisible">As long as there’s been a National Park seated on a super volcano, there’s been erroneous reports of impending doom.</dd>
+	  <dt>How Much Does Yellowstone cost?</dt>
+	  <dd class="invisible">Entrance to see Old Faithful, the Grand Canyon of the Yellowstone and other wonders of America’s first national park comes with a small price tag.</dd>
+	</dl>
+	</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+        "use strict";
+        $(document).ready(function() {
+
+        	$(".answers").click(function(event){ //added click event to link
+
+        		$("dd").toggleClass("invisible"); // for dd toggle the class invisible
+
+       		 });
+        });
+</script>
+</body>
+</html>
