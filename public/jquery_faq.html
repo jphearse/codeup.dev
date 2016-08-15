@@ -33,42 +33,42 @@
 	<div id="background">
 	<dl>
 	  <dt>Do Cell Phones Work in Yellowstone?</dt>
-	  <dd class="invisible">Cell phone service is available in over 50 percent of the park.</dd>
+	  <dd>Cell phone service is available in over 50 percent of the park.</dd>
 	  <dt>Can I Bring My Pet to Yellowstone?</dt>
-	  <dd class="invisible">Pets are prohibited throughout most areas in national parks.</dd>
+	  <dd>Pets are prohibited throughout most areas in national parks.</dd>
 	  <dt>Are Yellowstone Hotels and Campgrounds Open in Winter?</dt>
-	  <dd class="invisible">Many of Yellowstone’s hotels and cabins, including the famous Old Faithful Inn, are only open during the summer season.</dd>
+	  <dd>Many of Yellowstone’s hotels and cabins, including the famous Old Faithful Inn, are only open during the summer season.</dd>
 	  <dt>Do I need a car to tour Yellowstone?</dt>
-	  <dd class="invisible">During the summer season, cars are the best option for taking a trip around Yellowstone unless you are riding with a bus tour or concessionaire that provides transportation. </dd>
+	  <dd>During the summer season, cars are the best option for taking a trip around Yellowstone unless you are riding with a bus tour or concessionaire that provides transportation. </dd>
 	  <dt>Has Anyone Ever Fallen into a Geyser?</dt>
-	  <dd class="invisible">Visitors have in the past slipped and fallen into hot springs, or were severely injured with burns from erupting geysers, but it is extremely rare.</dd>
+	  <dd>Visitors have in the past slipped and fallen into hot springs, or were severely injured with burns from erupting geysers, but it is extremely rare.</dd>
 	  <dt>How Can I Avoid the Crowds at Old Faithful?</dt>
-	  <dd class="invisible">Every year, Yellowstone draws in nearly three million visitors—most of them eager to see Old Faithful. The busy days of June through September.</dd>
+	  <dd>Every year, Yellowstone draws in nearly three million visitors—most of them eager to see Old Faithful. The busy days of June through September.</dd>
 	  <dt>How close can I get to wild animals in Yellowstone?</dt>
-	  <dd class="invisible">Stay at least 100 yards away from bears and wolves and at least 25 yards away from other large mammals like bison, elk, bighorn sheep, deer, moose and coyotes.</dd>
+	  <dd>Stay at least 100 yards away from bears and wolves and at least 25 yards away from other large mammals like bison, elk, bighorn sheep, deer, moose and coyotes.</dd>
 	  <dt>When is the Best Season to Visit Yellowstone?</dt>
-	  <dd class="invisible"> Every season brings not only a new landscape to the park, but a variety of exhilarating seasonal pursuits in Yellowstone.</dd>
+	  <dd> Every season brings not only a new landscape to the park, but a variety of exhilarating seasonal pursuits in Yellowstone.</dd>
 	  <dt>Is Yellowstone Going to Blow?</dt>
-	  <dd class="invisible">As long as there’s been a National Park seated on a super volcano, there’s been erroneous reports of impending doom.</dd>
+	  <dd>As long as there’s been a National Park seated on a super volcano, there’s been erroneous reports of impending doom.</dd>
 	  <dt>How Much Does Yellowstone cost?</dt>
-	  <dd class="invisible">Entrance to see Old Faithful, the Grand Canyon of the Yellowstone and other wonders of America’s first national park comes with a small price tag.</dd>
+	  <dd>Entrance to see Old Faithful, the Grand Canyon of the Yellowstone and other wonders of America’s first national park comes with a small price tag.</dd>
 	</dl>
-	<h3>Big Bend</h3>
-	<ul>
+	<h3 class="bigBend-toggle">Big Bend</h3>
+	<ul class="bigBend">
 		<li>Big bend is the only state park to have an entire mountain range within its borders.</li>
 		<li>Big bend is larger than the state of Rhode Island.</li>
 		<li>The park is named after the "big bend" in the Rio Grande in west Texas.</li>
 		<li>The treaty of Guadalupe Hidalgo was signed and claimed the Rio Grande as the official border of Texas and mexico.</li>
 	</ul>
-	<h3>Yellowstone</h3>
-	<ul>
+	<h3 class="yellowStone-toggle">Yellowstone</h3>
+	<ul class="yellowstone">
 		<li>In 2010, Yellowstone had the highest visitation year on record with 3,640,184 visitors</li>
 		<li>President Ulysses S. Grant established Yellowstone as the world’s first National Park on March 1, 1872.</li>
 		<li>At 28,000 square acres (44 square miles), Yellowstone is the largest intact temperate ecosystem in the world</li>
 		<li>Yellowstone has the largest, free-roaming herd of bison in the world</li>
 	</ul>
-	<h3>Yosemite</h3>
-	<ul>
+	<h3 class="yosemite-toggle">Yosemite</h3>
+	<ul class="yosemite">
 		<li>El Capitan is the largest granite block in the world</li>
 		<li>There are 747,956 acres of land in Yosemite National Park</li>
 		<li>Ribbon Falls in Yosemite National Park is 9 times larger than Niagra Falls</li>
@@ -85,17 +85,21 @@
         $(document).ready(function() {
 
         	$(".answers").click(function(event){ //added click event to link
-
-        		$("dd").toggle(); // for dd toggle the class invisible
+        		$("dd").fadeToggle(); // for dd toggle the class invisible
         	});
+
+        	$("dt").click(function(event){
+        		$(this).next().toggle();
+        	})
 
         	$("ul").each(function(index){
         		console.log(this);
         		$(this).children().first().css("font-weight", "bold");
         	});
         	
-        	$("li").click(function(event){
-        		$(this).parent().hide();
+        	$("h3").click(function(event){
+        		console.log(this);
+        		$(this).next().slideToggle();
         	
         	});
         });
