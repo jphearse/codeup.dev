@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather Map</title>
+</head>
+<body>
+<div id="weatherDiv"></div>
+<div id="temp"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+(function() {
+    "use strict";
+    	const apiKey = "953bf7367de52c4b7ab799a71657453b"
+
+		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+		    APPID: apiKey,
+		    q: "San Antonio, TX",
+		    cnt: "3",
+		    units: "imperial"
+		}).done(function(data){
+			console.log(data);
+			conditions(data)
+		}).fail(function (xhr, err, msg){
+			alert("something went wrong");
+		});
+
+		
+		function conditions (weather){
+			var conditionSpace = "";
+			for(var i = 0; i <= 2; i++){
+				conditionSpace += weather.city.name + "<br>";
+				conditionSpace += weather.list[i].temp.min + " / " + weather.list[i].temp.max + "<br>";
+				conditionSpace += "Conditions: " + weather.list[i].weather[0].main + "<br>";
+				conditionSpace += "Pressure: " + weather.list[i].pressure + "<br>";
+				conditionSpace += "Humidity: " + weather.list[i].humidity + "<br><br>";
+			}
+				$("#weatherDiv").append(conditionSpace);
+
+		}
+
+
+
+
+})();
+</script>
+</body>
+</html>
