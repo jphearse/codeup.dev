@@ -1,0 +1,24 @@
+body{
+	background-color: #99b3ff;
+}
+#header{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#map-canvas {
+	width: 1000px;
+	height: 450px;
+	margin: auto;
+}
+#days{
+	text-align: center;
+	background-color: #d9d9d9;
+}
+#wrap{
+	margin-left: 25px;
+	margin-right: 25px;
+}
+.col-md-4{
+	margin-bottom: 20px;
+	border: solid black 2px;
+}
