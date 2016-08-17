@@ -4,7 +4,6 @@
     	var lat = "29.427325";
     	var lon = "-98.491097";
 
-
     	function request(){
 		$.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
 		    APPID: apiKey,
@@ -43,7 +42,6 @@
 				$("#weatherDiv").append(conditionSpace);
 
 		}
-
 		
         // Set our map options
         var mapOptions = {
