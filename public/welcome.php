@@ -9,9 +9,9 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 
     <title>Joe Phearse</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <!-- Bootstrap core CSS -->
     
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Custom styles for this template -->
     <link href="/css/welcome.css" rel="stylesheet">
