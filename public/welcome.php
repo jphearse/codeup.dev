@@ -214,10 +214,10 @@
 			<h1>My Portfolio</h1>
 			
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="/pizza_form.php" target="_blank"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
+				<a href="/calculator.html" target="_blank"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="/pizza_form.php" target="_blank"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
+				<a href="/weather_map.html" target="_blank"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
 				<a href="/pizza_form.php" target="_blank"><img src="/img/pizza-slice.jpg" class="img-responsive"></a>
