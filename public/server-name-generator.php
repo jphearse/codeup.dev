@@ -1,6 +1,6 @@
 <?php 
 
-$adjectives = ['Wandering', 'Hideous', 'Fancy', 'Skillful', 'Aspiring', 'Complex', 'Awesome', 'Chubby', 'Ablaze', 'Devilish', 'difficult', 'sorry','anxious','huge','cute'];
+$adjectives = ['Wandering', 'Hideous', 'Fancy', 'Skillful', 'Aspiring', 'Complex', 'Awesome', 'Chubby', 'Ablaze', 'Devilish', 'Difficult', 'Sorry','Anxious','Huge','Cute'];
 $nouns = ['tree','fork','tent','hands','thunder','baby','donkey','fairy','dog','airplane', 'soup', 'poet', 'dealer', 'pizza', 'driver'];
 
 function randomElement($array){
