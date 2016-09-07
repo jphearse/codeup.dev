@@ -7,6 +7,11 @@ $favoriteThings = ['Not doing homework', 'Concerts', 'Movies', 'Weekends', 'Netf
 <html>
 <head>
 	<title>Favorite Things</title>
+	<style>
+	
+	tr:nth-child(even) {
+		background-color: #f2f2f2}
+	</style>
 </head>
 <body>
  <table>
