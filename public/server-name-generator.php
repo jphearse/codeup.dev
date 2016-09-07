@@ -7,7 +7,10 @@ function randomElement($array){
 	$random = mt_rand(0,9);
 	return $array[$random];
 }
-
+function generator($element, $element2)
+{
+	return randomElement($element) . " " . randomElement($element2);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,6 +25,6 @@ function randomElement($array){
 	</style>
 </head>
 <body>
-	<h1>Server Name: <?php echo randomElement($adjectives) . "-" . randomElement($nouns); ?></h1>
+	<h1>Server Name: <?php echo generator($adjectives, $nouns); ?></h1>
 </body>
 </html>
