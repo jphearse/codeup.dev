@@ -13,7 +13,7 @@ $favoriteThings = ['Not doing homework', 'Concerts', 'Movies', 'Weekends', 'Netf
 		font-size: 20px;
 	}
 	tr:nth-child(even) {
-		background-color: #f2f2f2
+		background-color: #f2f2f2;
 	}
 	</style>
 </head>
