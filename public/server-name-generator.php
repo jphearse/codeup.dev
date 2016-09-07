@@ -12,7 +12,7 @@ function randomElement($array){
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Server Name Generator</title>
 	<style>
 		h1{
 			font-size: 50px;
