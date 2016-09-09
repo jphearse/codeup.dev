@@ -1,14 +1,24 @@
 <?php 
+session_start();
+var_dump($_SESSION);
+
 function pageController(){
 		$log = [];
 		$log['name'] = isset($_POST['name']) ? $_POST['name'] : '';
 		$log['password'] = isset($_POST['password']) ? $_POST['password'] : '';
 		$log['failed'] = '';
+		if (!empty($_SESSION)) {
+			if ($_SESSION['logged-in-name'] == 'guest') {
+				header("Location: /authorized.php");
+				die;
+			}
+		}
  		if (!empty($_POST) || !empty($_GET)) { // check if form was sunmitted
 
 		
 		if ($log['name'] == 'guest' && $log['password'] == 'password') {
 			header("Location: /authorized.php");
+			$_SESSION['logged-in-name']= $log['name'];			
 			// remember to die!
 			die;
 		} else {
