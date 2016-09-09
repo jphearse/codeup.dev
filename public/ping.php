@@ -3,10 +3,10 @@
 
 function pageController(){
 
-$count = [];
-$count['counter'] = (isset($_GET['counter'])) ? $_GET['counter'] :  0;
-
-return $count;
+	$count = [];
+	$count['counter'] = (isset($_GET['counter'])) ? $_GET['counter'] :  0;
+	$count['hit'] = (isset($_GET['hit'])) ? $_GET['hit'] :  "";
+	return $count;
 }
 extract(pageController());
 
@@ -26,20 +26,23 @@ extract(pageController());
 	    background-color: red;
 	    border: 0;
 	    color: white;
-	    padding: 10px 20px; 
+	    margin-bottom: 5px; 
 	}
-	a:hover {
-		color: #4a4a4a;
-	    text-decoration: none;  
+	#container{
+		float: left;
+		position: relative;
+		width: 250px;
 	}
-
 	</style>
 </head>
 <body>
-<h1>Ping</h1><br>
-<h3>Counter: <?= $counter; ?> </h3>
+<div id="container">
+	<h1>Ping</h1>
+	<h3>Counter: <?= $counter; ?> <?= $hit; ?></h3>
 
-<a href="pong.php?counter=<?= $counter +1; ?>&hit">Hit</a>
-<a href="pong.php?miss">Miss</a>
+	<a class="btn btn-info" href="pong.php?counter=<?= $counter +1; ?>&hit=hit">Hit</a>
+	<a class="btn btn-info" href="pong.php?hit=miss">Miss</a>
+</div>
+<img src="/img/ping.jpg">
 </body>
 </html>
