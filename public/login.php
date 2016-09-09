@@ -4,7 +4,7 @@ function pageController(){
 		$log['name'] = isset($_POST['name']) ? $_POST['name'] : '';
 		$log['password'] = isset($_POST['password']) ? $_POST['password'] : '';
 		$log['failed'] = '';
-		if (!empty($_POST) || !empty($_GET)) {
+ 		if (!empty($_POST) || !empty($_GET)) { // check if form was sunmitted
 
 		
 		if ($log['name'] == 'guest' && $log['password'] == 'password') {
