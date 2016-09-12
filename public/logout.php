@@ -55,7 +55,7 @@ clearSession();
  	</style>
  </head>
  <body>
- <h1>You are logged out</h1><br>
+ <h1>You are logged out</h1>
  <a href="/login.php" class="blue_button">Login</a>
  </body>
  </html>
