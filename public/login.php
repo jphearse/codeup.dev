@@ -1,10 +1,11 @@
 <?php 
 session_start();
+require_once 'functions.php';
 
 function pageController(){
 		$log = [];
-		$log['name'] = isset($_POST['name']) ? $_POST['name'] : '';
-		$log['password'] = isset($_POST['password']) ? $_POST['password'] : '';
+		$log['name'] = inputHas('name') ? inputGet('name') : '';
+		$log['password'] = inputHas('password') ? inputGet('password') : '';
 		$log['failed'] = '';
 		if (!empty($_SESSION)) {
 			if ($_SESSION['logged-in-name'] == 'guest') {
