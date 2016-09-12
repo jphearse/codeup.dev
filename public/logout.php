@@ -1,4 +1,5 @@
 <?php 
+session_start();
 function clearSession()
 {
     // clear $_SESSION array
@@ -7,11 +8,12 @@ function clearSession()
 	session_destroy();
     // delete session data on the server and send the client a new cookie
     session_regenerate_id(true);
+    session_start();
 }
 
 // start the session (or resume an existing one)
 // this function must be called before trying to get or set any session data!
-session_start();
+
 
 
 clearSession();
