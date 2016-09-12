@@ -1,9 +1,11 @@
 <?php 
+require_once 'functions.php';
+
 function pageController(){
 
 	$count = [];
-	$count['counter'] = (isset($_GET['counter'])) ? $_GET['counter'] :  0;
-	$count['hit'] = (isset($_GET['hit'])) ? $_GET['hit'] :  "";
+	$count['counter'] = (inputHas('counter')) ? inputGet('counter') :  0;
+	$count['hit'] = (inputHas('hit')) ? inputGet('hit') :  "";
 	return $count;
 }
 extract(pageController());
