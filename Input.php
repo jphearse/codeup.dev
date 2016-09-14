@@ -10,7 +10,11 @@ class Input
      */
     public static function has($key)
     {
-        // TODO: Fill in this function
+        if (isset($_REQUEST[$key])) {
+            return true;
+        } else{
+            return false;
+        }
     }
 
     /**
@@ -22,7 +26,11 @@ class Input
      */
     public static function get($key, $default = null)
     {
-        // TODO: Fill in this function
+        if(Input::has($key) == true){
+            return $_REQUEST[$key];
+        } else {
+            return null;
+        }
     }
 
     ///////////////////////////////////////////////////////////////////////////
