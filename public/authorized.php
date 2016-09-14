@@ -1,11 +1,9 @@
 <?php 
+require_once '/vagrant/sites/codeup.dev/Auth.php';
 session_start();
 var_dump($_SESSION);
 
-	if ($_SESSION['logged-in-name'] != 'guest') {
-		header("Location: /login.php");
-		die;
-	}
+Auth::check();
  ?>
 <!DOCTYPE html>
 <html>
