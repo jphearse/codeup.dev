@@ -1,37 +1,22 @@
 <?php 
 session_start();
-require_once 'functions.php';
-
+require_once '/vagrant/sites/codeup.dev/Input.php';
+require_once '/vagrant/sites/codeup.dev/Auth.php';
+require_once '/vagrant/sites/codeup.dev/Log.php';
 function pageController(){
 		$log = [];
-		$log['name'] = inputHas('name') ? inputGet('name') : '';
-		$log['password'] = inputHas('password') ? inputGet('password') : '';
-		$log['failed'] = '';
-		if (!empty($_SESSION)) {
-			if ($_SESSION['logged-in-name'] == 'guest') {
-				header("Location: /authorized.php");
-				die;
-			}
-		}
- 		if (!empty($_POST) || !empty($_GET)) { // check if form was sunmitted
+		$log['name'] = Input::has('name') ? Input::get('name') : '';
+		$log['password'] = Input::has('password') ? Input::get('password') : '';
 
-		
-		if ($log['name'] == 'guest' && $log['password'] == 'password') {
-			header("Location: /authorized.php");
-			$_SESSION['logged-in-name']= $log['name'];			
-			// remember to die!
-			die;
-		} else {
-			if ($log['name'] == 'guest') {
-				$log['failed'] = 'Wrong password';
-			} else{
-				$log['failed'] = 'Wrong username and/or password';
-			}
-		}
-	}
 	return $log;
 }
 extract(pageController());
+		if (!empty($name)||!empty($password)) {
+		Auth::attempt($name,$password);
+
+		}
+
+		Auth::user();
 ?>
 
 <!DOCTYPE html>
@@ -88,6 +73,6 @@ extract(pageController());
 	        <input class="form-control" type="password" name="password" placeholder="Password"><br>
 	        <input class="blue_button" type="submit">
 	</form>
-			<h4><?= $failed; ?></h4> 
+			<!-- <h4><?= $failed; ?></h4>  -->
 </body>
 </html>
