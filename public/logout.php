@@ -1,17 +1,8 @@
 <?php 
 session_start();
-function clearSession()
-{
-    session_unset();
-    
-	session_destroy();
+require_once '/vagrant/sites/codeup.dev/Auth.php';
+Auth::logout();
 
-    session_regenerate_id(true);
-
-    session_start();
-}
-
-clearSession();
 
  ?>
  <!DOCTYPE html>
