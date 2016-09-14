@@ -1,11 +1,11 @@
 <?php 
-require_once 'functions.php';
+require_once '/vagrant/sites/codeup.dev/Input.php';
 
 function pageController(){
 
 	$count = [];
-	$count['counter'] = (inputHas('counter')) ? inputGet('counter') :  0;
-	$count['hit'] = (inputHas('hit')) ? inputGet('hit') :  "";
+	$count['counter'] = Input::has('counter')? Input::get('counter') :  0;
+	$count['hit'] = Input::has('hit') ? Input::get('hit') :  "";
 	return $count;
 }
 extract(pageController());
