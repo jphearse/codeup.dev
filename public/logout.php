@@ -3,7 +3,6 @@ require_once '/vagrant/sites/codeup.dev/Auth.php';
 session_start();
 	Auth::logout();
 
-
  ?>
  <!DOCTYPE html>
  <html>

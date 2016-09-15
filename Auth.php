@@ -1,6 +1,7 @@
 <?php 
 require_once '/vagrant/sites/codeup.dev/Log.php';
 require_once '/vagrant/sites/codeup.dev/public/functions.php';
+
 class Auth 
 {
 	public static $password = '$2y$10$SLjwBwdOVvnMgWxvTI4Gb.YVcmDlPTpQystHMO2Kfyi/DS8rgA0Fm';

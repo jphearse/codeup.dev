@@ -4,6 +4,7 @@ session_start();
 var_dump($_SESSION);
 
 	Auth::check();
+	
  ?>
 <!DOCTYPE html>
 <html>

@@ -18,6 +18,7 @@ extract(pageController());
 		}
 
 		Auth::user();
+		
 ?>
 
 <!DOCTYPE html>
