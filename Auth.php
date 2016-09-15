@@ -1,6 +1,5 @@
 <?php 
 require_once '/vagrant/sites/codeup.dev/Log.php';
-require_once '/vagrant/sites/codeup.dev/public/functions.php';
 
 class Auth 
 {
@@ -10,20 +9,19 @@ class Auth
 	public static function attempt($username, $password){
 
 		
-		if ($username == 'guest' && password_verify($password, Auth::$password) == 'password') {
+		$instance = new Log();
+		if ($username == 'guest' && password_verify($password, Auth::$password) == true) {
 			header("Location: /authorized.php");
 			$_SESSION['logged-in-name']= $username;			
-
-			$instance = new Log('cli');
 
 			$instance->filename = "log-". date('Y-m-d') . '.log';
 			$instance->info("User {$username} in successfully");
 			die;
-		} elseif($username != 'guest' || password_verify($password, Auth::$password) != 'password') {
-			$instance = new Log('cli');
+		} elseif($username != 'guest' || password_verify($password, Auth::$password) != true) {
 
 				$instance->filename = "log-". date('Y-m-d') . '.log';
 				$instance->info("User {$username} failed");
+				return false;
 		}
 	}
 	public static function check(){

@@ -5,20 +5,22 @@ require_once '/vagrant/sites/codeup.dev/Auth.php';
 
 function pageController(){
 		$log = [];
-		$log['name'] = Input::has('name') ? Input::get('name') : '';
-		$log['password'] = Input::has('password') ? Input::get('password') : '';
+		$log['name'] = Input::get('name');
+		$log['password'] = Input::get('password');
+		$log['failed'] = '';
+		if (!empty($log['name'])||!empty($log['password'])) {
+			Auth::attempt($log['name'],$log['password']);
+			if ($log['name'] != 'guest' || password_verify($log['password'], Auth::$password) == false) {
+				$log['failed'] = "Wrong Password/Username";
+			}
+		}
 
+		Auth::user();
 	return $log;
 }
 extract(pageController());
 
-		if (!empty($name)||!empty($password)) {
-		Auth::attempt($name,$password);
 
-		}
-
-		Auth::user();
-		
 ?>
 
 <!DOCTYPE html>
@@ -75,6 +77,6 @@ extract(pageController());
 	        <input class="form-control" type="password" name="password" placeholder="Password"><br>
 	        <input class="blue_button" type="submit">
 	</form>
-			<!-- <h4><?= $failed; ?></h4>  -->
+			<h4><?= $failed; ?></h4> 
 </body>
 </html>
