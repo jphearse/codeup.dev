@@ -1,5 +1,4 @@
 <?php 
-require_once '/vagrant/sites/codeup.dev/Input.php';
 require_once '/vagrant/sites/codeup.dev/Log.php';
 require_once '/vagrant/sites/codeup.dev/public/functions.php';
 class Auth 

@@ -3,7 +3,7 @@ require_once '/vagrant/sites/codeup.dev/Auth.php';
 session_start();
 var_dump($_SESSION);
 
-Auth::check();
+	Auth::check();
  ?>
 <!DOCTYPE html>
 <html>

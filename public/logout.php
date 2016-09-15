@@ -1,7 +1,7 @@
 <?php 
-session_start();
 require_once '/vagrant/sites/codeup.dev/Auth.php';
-Auth::logout();
+session_start();
+	Auth::logout();
 
 
  ?>

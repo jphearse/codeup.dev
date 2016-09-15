@@ -2,7 +2,7 @@
 session_start();
 require_once '/vagrant/sites/codeup.dev/Input.php';
 require_once '/vagrant/sites/codeup.dev/Auth.php';
-require_once '/vagrant/sites/codeup.dev/Log.php';
+
 function pageController(){
 		$log = [];
 		$log['name'] = Input::has('name') ? Input::get('name') : '';
@@ -11,6 +11,7 @@ function pageController(){
 	return $log;
 }
 extract(pageController());
+
 		if (!empty($name)||!empty($password)) {
 		Auth::attempt($name,$password);
 
