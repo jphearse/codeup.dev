@@ -1,5 +1,5 @@
-function request(){
-			$.get("https://api.themoviedb.org/3/search/movie?api_key=14a1f11582b84502905c07a48b48bfd6&language=en-US&query=juno", {
+function request(title){
+			$.get("https://api.themoviedb.org/3/search/movie?api_key=14a1f11582b84502905c07a48b48bfd6&language=en-US&query="+title, {
 
 			}).done(function(data){
 				console.log(data);		//console logs object
@@ -8,8 +8,18 @@ function request(){
 				alert("something went wrong");			//put requeset in fucntion, make long and 
 			});											//lat variables to replace when fuction is 29.427325, -98.491097
 		}
-		request();					//calls request function, gets san antonio coords and shows weather
-		
+
+
+			$("button").click(function () {
+
+			var $title = $('#msg').html($('input').val());
+			console.log($title.html());
+			request($title.html());					//calls request function, gets san antonio coords and shows weather
+		    });
+
+
+
+
 		function conditions (movie){
 			var moviesSpace = "";
 				moviesSpace += "<h2 id='header'><strong>" + movie.results[0].original_title + "</strong></h2>" + "<br>";
