@@ -10,11 +10,17 @@ function request(title){
 		}
 
 
+			$('html').ready(function(){
+    $('#text').keypress(function(e){
+      if(e.keyCode==13)
+      $('button').click();
+    });
+});
 			$("button").click(function () {
 
-			var $title = $('#msg').html($('input').val());
-			console.log($title.html());
-			request($title.html());					//calls request function, gets san antonio coords and shows weather
+			var $title = $('input').val();
+			console.log($title);
+			request($title);					//calls request function, gets san antonio coords and shows weather
 		    });
 
 
@@ -22,9 +28,15 @@ function request(title){
 
 		function conditions (movie){
 			var moviesSpace = "";
-				moviesSpace += "<h2 id='header'><strong>" + movie.results[0].original_title + "</strong></h2>" + "<br>";
-				
-			
-				$("#movies").append(moviesSpace);
+				moviesSpace += movie.results[0].original_title;
+				$("#movies").html(moviesSpace);
 
+				var imageSpace = "" 
+				imageSpace += "<img src=http://image.tmdb.org/t/p/w500" + movie.results[0].poster_path + ">"
+				$("#image").html(imageSpace);
+
+				var infoSpace = '';
+				infoSpace += '<strong>Title: ' + movie.results[0].original_title + '</strong> <em>('+ movie.results[0].release_date.substring(0,4) +')</em><br>';
+				infoSpace += '<strong>Plot: </strong>' + movie.results[0].overview;
+				$("#info").html(infoSpace);
 		}
