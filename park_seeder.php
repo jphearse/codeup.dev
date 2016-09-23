@@ -62,13 +62,9 @@ $parks = [
 	['name' => 'Yosemite','location' => 'California','date_established' => '1890-10-01','area_in_acres' => '761266.19',],
 	['name' => 'Zion','location' => 'Utah','date_established' => '1919-11-19','area_in_acres' => '146597.60',],
 ];
-
-foreach ($parks as $key => $park) {
-	$query = "INSERT INTO national_parks (name, location, date_established, area_in_acres) VALUES ('{$park['name']}', '{$park['location']}', 
-	'{$park['date_established']}', {$park['area_in_acres']};";
-
-	$dbc->exec($query);
-
+foreach ($parks as $park) {
+    $query2 = "INSERT INTO national_parks (name, location, date_established, area_in_acres) VALUES ('{$park['name']}', '{$park['location']}', '{$park['date_established']}', '{$park['area_in_acres']}')";
+    $numRows = $dbc->exec($query2);
+    // echo "Inserted ID: " . $dbc->lastInsertId() . PHP_EOL;
 }
-
 
