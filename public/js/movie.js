@@ -58,10 +58,11 @@ function request(title){
 		function movieCast(cast){
 				console.log("<img src=http://image.tmdb.org/t/p/w500" + cast.cast[0].profile_path + ">");
 				var castSpace = '';			//call cast request and use that for 
+				castSpace += '<h3><strong>Cast</strong></h3>';
 				for (var i = 0; i <= 4; i++) {
 				castSpace += "<div id='castImages' class='col-lg-3 col-md-3 col-sm-3 col-xs-3'>";
 				castSpace += "<img src=http://image.tmdb.org/t/p/w500" + cast.cast[i].profile_path + "><br>";
-				castSpace += cast.cast[i].name;
+				castSpace += "<strong>"+ cast.cast[i].name + "</strong><br> as " + cast.cast[i].character;
 				castSpace += "</div>"
 				}
 				$("#cast").html(castSpace);
