@@ -3,10 +3,10 @@ function request(title){
 
 			}).done(function(data){
 				console.log(data);		//console logs object
-				movieInfo(data);//calls condition function
+				movieInfo(data);
 			}).fail(function (xhr, err, msg){
-				alert("something went wrong");			//put requeset in fucntion, make long and 
-			});											//lat variables to replace when fuction is 29.427325, -98.491097
+				alert("something went wrong");			
+			});											
 		}
 
 		function requestCast(movieId){
@@ -14,10 +14,10 @@ function request(title){
 
 			}).done(function(data){
 				console.log(data);		//console logs object
-				movieCast(data);//calls condition function
+				movieCast(data);
 			}).fail(function (xhr, err, msg){
-				alert("something went wrong");			//put requeset in fucntion, make long and 
-			});											//lat variables to replace when fuction is 29.427325, -98.491097
+				alert("something went wrong");			
+			});											
 		}
 
 
@@ -31,7 +31,7 @@ function request(title){
 
 			var $title = $('input').val();
 			console.log($title);
-			request($title);					//calls request function, gets san antonio coords and shows weather
+			request($title);					
 	    });
 
 
@@ -47,7 +47,8 @@ function request(title){
 				$("#image").html(imageSpace);
 
 				var infoSpace = '';
-				infoSpace += '<strong>Title: ' + movie.results[0].original_title + '</strong> <em>('+ movie.results[0].release_date.substring(0,4) +')</em><br>';
+				infoSpace += '<strong>Title: </strong>' + movie.results[0].original_title + ' <em>('+ movie.results[0].release_date.substring(0,4) 
+					+')</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><i class="fa fa-star"> '+movie.results[0].vote_average+'</i><br>';
 				infoSpace += '<strong>Plot: </strong>' + movie.results[0].overview;
 				$("#info").html(infoSpace);
 
@@ -57,7 +58,7 @@ function request(title){
 		}
 		function movieCast(cast){
 
-				var castSpace = '';			//call cast request and use that for 
+				var castSpace = '';			
 				for(var i = 0; i < cast.crew.length; i++){
 					if(cast.crew[i].job == 'Director'){
 						castSpace += '<div id="directorInfo"><strong>Director: </strong>'+ cast.crew[i].name + "</div>";
