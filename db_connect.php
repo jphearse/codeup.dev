@@ -1,5 +1,5 @@
 <?php // Get new instance of PDO object
-require_once ('national_parks.php');
+// require_once ('parks_migration.php');
 $dbc = new PDO('mysql:host='.DB_HOST . ';dbname='.DB_NAME, DB_USER, DB_PASS);
 
 // Tell PDO to throw exceptions on error
