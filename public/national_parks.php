@@ -55,5 +55,21 @@ extract(pageController($dbc));
 			<?php $j = 1 ;for($i = 0; $i <= $parkCount; $i+=4) { ?>
 				<a href="national_parks.php?offset=<?= $i ?>" class="btn btn-success"><?=($j++)?></a>
 			<?php } ?>
+
+			<form>
+				<h5>Name: </h5>
+				<input type="text" name="name" class="form-control"><br>
+				<h5>Location: </h5>
+				<input type="text" name="location" class="form-control"><br>
+				<h5>Date: </h5>
+				<input type="text" name="date_established" class="form-control"><br>
+				<h5>Area in Acres: </h5>
+				<input type="text" name="area_in_acres" class="form-control"><br>
+				<h5>Description: </h5>
+				<input type="text" name="descriptions" class="form-control"><br>
+				<button type="submit">Submit</button>
+
+
+			</form>
 </body>
 </html>
