@@ -7,23 +7,32 @@ define('DB_PASS', 'codeup');
 
 require '/vagrant/sites/codeup.dev/db_connect.php';
 
-function pageController($dbc)
+function pageController($dbc) 
 {
-	$offset = (isset($_GET)) ? $_GET['offset'] : 0 ;
-
-	$query = ('SELECT * FROM national_parks');
+	$offset = (isset($_GET['offset'])) ? ($_GET['offset']) : 0;
+	$query = ("SELECT * FROM national_parks");
 	$stmt = $dbc->prepare($query);
 	$stmt->execute();
-	$query2 = ('SELECT * FROM national_parks LIMIT 4 OFFSET ' . $offset);
+	$query2 = ("SELECT * FROM national_parks LIMIT 4 OFFSET ".$offset);
 	$stmt2 = $dbc->prepare($query2);
 	$stmt2->execute();
-	$parks = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-	return [
+	$parks = $stmt2 ->fetchAll(PDO::FETCH_ASSOC);
+	return [ 
 		'parks' => $parks,
 		'parkCount' => $stmt->rowCount()
 	];
 };
-extract(pageController($dbc));
+extract (pageController($dbc));
+function submitNewPark($dbc) 
+{
+	$query = 'INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (?, ?, ?, ?, ?)';
+	
+	$stmt = $dbc->prepare($query);
+	$stmt->execute(array($_GET['name'], $_GET['location'], $_GET['date_established'], $_GET['area_in_acres'], $_GET['description']));
+}
+if(isset($_GET['name'])) {
+	submitNewPark($dbc);
+};
 ?>
 
 <!DOCTYPE html>
@@ -43,12 +52,12 @@ extract(pageController($dbc));
 
 				<?php foreach ($parks as $key => $park) { ?>
 					<tr>
-						<td> <?= $park['id'] ?> </td>
-						<td> <?= $park['NAME'] ?> </td>
-						<td> <?= $park['location'] ?> </td>
-						<td> <?= $park['date_established'] ?> </td>
-						<td> <?= $park['area_in_acres'] ?> </td>
-						<td> <?= $park['description'] ?> </td>
+						<td> <?= htmlspecialchars(strip_tags($park['id'])); ?> </td>
+						<td> <?= htmlspecialchars(strip_tags($park['NAME'])); ?> </td>
+						<td> <?= htmlspecialchars(strip_tags($park['location'])); ?> </td>
+						<td> <?= htmlspecialchars(strip_tags($park['date_established'])); ?> </td>
+						<td> <?= htmlspecialchars(strip_tags($park['area_in_acres'])); ?> </td>
+						<td> <?= htmlspecialchars(strip_tags($park['description'])); ?> </td>
 					</tr>
 				<?php } ?>
 			</table>
@@ -56,18 +65,18 @@ extract(pageController($dbc));
 				<a href="national_parks.php?offset=<?= $i ?>" class="btn btn-success"><?=($j++)?></a>
 			<?php } ?>
 
-			<form>
+			<form method="GET">
 				<h5>Name: </h5>
-				<input type="text" name="name" class="form-control"><br>
+				<input type="text" name="name" class="form-control" placeholder="Name" required><br>
 				<h5>Location: </h5>
-				<input type="text" name="location" class="form-control"><br>
+				<input type="text" name="location" class="form-control" placeholder="Location" required><br>
 				<h5>Date: </h5>
-				<input type="text" name="date_established" class="form-control"><br>
+				<input type="text" name="date_established" class="form-control" placeholder="YYYY-MM-DD" required><br>
 				<h5>Area in Acres: </h5>
-				<input type="text" name="area_in_acres" class="form-control"><br>
+				<input type="text" name="area_in_acres" class="form-control" placeholder="Area in Acres"><br>
 				<h5>Description: </h5>
-				<input type="text" name="descriptions" class="form-control"><br>
-				<button type="submit">Submit</button>
+				<input type="text" name="description" class="form-control" placeholder="Description"><br>
+				<input type="submit" name="submit">
 
 
 			</form>
