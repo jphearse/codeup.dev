@@ -14,7 +14,10 @@ function request(title){
 
 			}).done(function(data){
 				console.log(data);		//console logs object
-				movieCast(data);
+				if (typeof data.cast[0] !== 'undefined') {
+					console.log(data.cast[0]);
+					movieCast(data);
+				};
 			}).fail(function (xhr, err, msg){
 				alert("something went wrong");			
 			});											
@@ -39,7 +42,7 @@ function request(title){
 
 		function movieInfo (movie){
 			var moviesSpace = "";
-				moviesSpace += movie.results[0].original_title;
+				moviesSpace += movie.results[0].title;
 				$("#movies").html(moviesSpace);
 
 				var imageSpace = "" 
@@ -47,7 +50,7 @@ function request(title){
 				$("#image").html(imageSpace);
 
 				var infoSpace = '';
-				infoSpace += '<strong>Title: </strong>' + movie.results[0].original_title + ' <em>('+ movie.results[0].release_date.substring(0,4) 
+				infoSpace += '<strong>Title: </strong>' + movie.results[0].title + ' <em>('+ movie.results[0].release_date.substring(0,4) 
 					+')</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><i class="fa fa-star"> '+movie.results[0].vote_average+'</i><br>';
 				infoSpace += '<strong>Plot: </strong>' + movie.results[0].overview;
 				$("#info").html(infoSpace);
