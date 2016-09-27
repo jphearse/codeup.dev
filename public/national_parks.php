@@ -27,8 +27,13 @@ function submitNewPark($dbc)
 {
 	$query = 'INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (?, ?, ?, ?, ?)';
 	
+	function format($date){
+		return date_create($date)->format('Y-m-d');
+	}
+	$date = format($_GET['date_established']);
+
 	$stmt = $dbc->prepare($query);
-	$stmt->execute(array($_GET['name'], $_GET['location'], $_GET['date_established'], $_GET['area_in_acres'], $_GET['description']));
+	$stmt->execute(array($_GET['name'], $_GET['location'], $date, $_GET['area_in_acres'], $_GET['description']));
 }
 if(isset($_GET['name'])) {
 	submitNewPark($dbc);
