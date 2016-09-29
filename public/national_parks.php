@@ -6,10 +6,11 @@ define('DB_USER', 'parks_user');
 define('DB_PASS', 'codeup');
 
 require '/vagrant/sites/codeup.dev/db_connect.php';
+require '/vagrant/sites/codeup.dev/input.php';
 
 function pageController($dbc) 
 {
-	$offset = (isset($_GET['offset'])) ? ($_GET['offset']) : 0;
+	$offset = (Input::get('offset') == true) ? (Input::getNumber('offset')) : 0;
 	$query = ("SELECT * FROM national_parks");
 	$stmt = $dbc->prepare($query);
 	$stmt->execute();
@@ -30,12 +31,12 @@ function submitNewPark($dbc)
 	function format($date){
 		return date_create($date)->format('Y-m-d');
 	}
-	$date = format($_GET['date_established']);
+	$date = format(Input::get('date_established'));
 
 	$stmt = $dbc->prepare($query);
-	$stmt->execute(array($_GET['name'], $_GET['location'], $date, $_GET['area_in_acres'], $_GET['description']));
+	$stmt->execute(array(Input::getString('name'),Input::getString('location'), $date ,Input::getString('area_in_acres'),Input::getString('description')));
 }
-if(isset($_GET['name'])) {
+if(Input::get('name')) {
 	submitNewPark($dbc);
 };
 ?>
