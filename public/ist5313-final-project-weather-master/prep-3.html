@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Surviving Severe Weather</title>
+		<link href="styles/styles.css" rel="stylesheet" type="text/css"/>
+		<link href="styles/drag-and-drop-styles.css" rel="stylesheet" type="text/css"/>
+		<script language="javascript" src="scripts/drag-and-drop.js"></script>
+		
+		<!--- link your other script files here that are specific to this HTML page here --->
+	</head>	
+	<body onload="javascript:parent.visitTopic24();">
+		<header>
+		<div id="banner">	<img src=images/hurricane-banner.jpg alt="banner" title="Banner"/> </div>
+		</header>
+		<div id="all">
+			<div id="navigation">
+			<nav>
+			<div id="sidelinks" >
+			<a href="intro.html">Introduction</a>  <br>  <br>
+			<a href="hurricane-1.html">Hurricanes</a>   <br><br>
+			<a href="tornado-1.html">Tornadoes</a>     <br><br>
+			<a href="winter-1.html">Winter Storms</a> <br><br>
+			<a href="thunder-1.html">Thunderstorms</a> <br><br>
+			<a href="drought-1.html">Drought</a> <br><br>
+			<a href="prep-1.html">Preparedness</a> <br><br>
+			<a href="reference.html">References</a> <br><br>
+			<a href="final-test.html" id="quiz-link">Test</a> <br><br>
+			<a href="certificate.html" id="cert-link">Certificate</a>  <!--- include your navigation links here --->
+			</div>
+			
+			</nav>
+		</div>
+		<div id="main">
+		<div id="sub-navigation">
+			<nav>
+				<a class="navlinks" href="prep-1.html">Preparedness Overview</a> |
+				<a class="navlinks" href="prep-2.html">Media Page</a> |
+				<a class="navlinks" href="prep-3.html">Interactive</a>
+			</nav>
+		</div>
+		
+			
+		<section>
+			<div id="main-info">
+				<article>
+					<header>
+						<h1>Activity - Create a virtual Emergency Preparedness Kit</h1>
+					</header>
+<section>
+         		<form name="dd1" onsubmit="javascript:processForm(); return false;">  
+				<p>Drag each item into the appropriate category. You may need to drop the item at the bottom edge of the dragger bay</p>
+				<p>In every Emergency Kit: Flashlights, batteries, 3 days of water and canned food, a battery-powered radio, 
+                         and a First-Aid kit</p>
+				<div class="column">
+						<h3>Draggers</h3>
+					 	<div id="d1" value="3" class="dragger" draggable="true"
+				     		ondragstart="return startDrag( event )"
+				     		ondragend="return endDrag( event )"><p>Drought</p></div><br/>  
+				     	<div id="d2" value="2" class="dragger" draggable="true"
+				     		ondragstart="return startDrag( event )"
+				     		ondragend="return endDrag( event )"><p>Winter Storm</p></div><br/>                        
+				 		<div id="d3" value="0" class="dragger" draggable="true"
+				     		ondragstart="return startDrag( event )"
+				     		ondragend="return endDrag( event )"><p>Tornado</p></div><br/>  
+					 	<div id="d4" value="1" class="dragger" draggable="true"
+				     		ondragstart="return startDrag( event )"
+				     		ondragend="return endDrag( event )"><p>Hurricane</p></div><br/>  
+				</div>
+				
+				    
+				<div class="column">
+						<h3>Dragger Bays</h3>
+				     	<div id="db1" value="0" class="draggerbay" 
+				     		ondrop="return dropDragger( event )"
+				     		ondragover="return false"
+				     		ondragenter="return enterDragger( event )"><p>Thick blanket for protection, extra gauze and bandages</p></div><br/>                        
+				 		<div id="db2" value="1" class="draggerbay"
+				     		ondrop="return dropDragger( event )"
+				     		ondragover="return false"
+				     		ondragenter="return enterDragger( event )"><p>Eyedropper, bleach, & 1 gallon zip-lock baggies</p></div><br/>  
+					 	<div id="db3" value="2" class="draggerbay"
+				     		ondrop="return dropDragger( event )"
+				     		ondragover="return false"
+				     		ondragenter="return enterDragger( event )"><p>Warm, dry change of clothes, and a safe indoor heat source</p></div><br/> 
+					 	<div id="db4" value="3" class="draggerbay"
+				     		ondrop="return dropDragger( event )"
+				     		ondragover="return false"
+				     		ondragenter="return enterDragger( event )"><p>Large containers of drinking water, fans, and loose fitting, light-colored clothing</p></div><br/>  
+				</div>
+				<p id="response">&nbsp;</p>
+				<input type="submit" name="button" value="Submit Your Answer"/><br/>
+				</form>
+            </section>				<!--- put your content here --->
+				</article>
+			</div>
+			</div>
+			<div id="aside-info">
+				<aside>
+					<header>
+						<p id="aside-title-audio">Audio</p>
+					</header>
+<audio controls autoplay>
+  
+  <source src="audio/Audio-Activity.mp3" type="audio/mpeg">
+
+</audio>					<!--- put your audio here --->
+					<br/>
+					
+					<header>
+						<p id="aside-title-audio">Captions</p>
+					</header>
+				<div id="transcript">
+					Drag each item to the most appropriate answer. Click submit to see if you are correct!				<!--- include your transcript here --->
+				</div>
+				</aside>
+			</div>
+		</section>
+		</div>
+		
+
+	</body>
+</html>

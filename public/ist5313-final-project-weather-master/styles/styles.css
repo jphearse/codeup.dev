@@ -1,0 +1,180 @@
+body
+{
+	
+	background: #a0a0a0;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	font-family: Arial;
+}
+
+#main-info
+{
+	
+	display: table-cell;
+	vertical-align: top;
+	border: solid black;
+	background: #dddddd; 
+	float: left;
+	width: 540px;
+	height: 361px;
+	padding: 10px;
+	overflow: auto;
+}
+
+#main
+{
+	display: table-cell;
+	vertical-align: top;
+	margin-left: 3px;
+	margin-right: 6px;
+	float: left;
+	
+	height: 356px;
+
+}
+
+#main-table
+{
+	border: solid black;
+	vertical-align: top;
+	display: table;
+}
+
+
+#aside-info
+{
+	background: #dddddd;
+	height:410px;
+	border: solid black;
+	vertical-align: top;
+	
+	width: 168px;
+	
+	padding: 5px;
+	margin-left: 3px;
+	overflow: auto;
+}
+	
+
+
+#navigation
+{
+	margin-left: 6px;
+	text-align: center;
+	margin-right: 3px;
+	border: solid black;
+	background: #dddddd;
+	vertical-align: top;
+	display: table-cell;
+	padding: 10px;
+	width: 100px;
+	float: left;
+	height: 400px;
+}
+
+#sidelinks a:link
+{
+	font-size: 13px;
+	
+    font-weight: bold;
+    color: white;
+    background-color: #66CCFF;
+    width: 90px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+#sidelinks a{
+	color: white;
+	
+	
+}
+
+#sub-navigation
+{
+
+	border: solid black;
+	background: #dddddd;	
+	padding: 5px;
+	width: 550px;
+	float: left;
+	height: 18px;
+	font-size: 14px;
+	margin-bottom: 5px;
+	
+}
+
+#sub-navigation a{
+	font-size: 13px;
+    font-weight: bold;
+    color: white;
+    background-color: #9147DA;
+    width: 120px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+}
+
+#aside-title-audio
+{
+	background: #666666;
+	width: 140px;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	padding: 5px;
+	border: solid black;
+}
+
+#content-frame
+{
+	
+	border: none;
+}
+	
+#transcript
+{
+	color: green;
+	font-size: 12px;
+	padding:2px;
+	height: 200px;
+	width: 150px;
+}
+
+audio
+{
+	height: 20px;
+	width: 155px;
+	margin-left: 0px;
+}
+
+#quiz-link {
+	display: none;
+}
+
+#cert-link {
+	display: none;
+}
+
+#banner{
+	
+}
+#block {
+	display: block;
+	
+}
+
+#intro-final
+{
+	display: table-cell;
+	vertical-align: top;
+	border: solid black;
+	background: #dddddd; 
+	float: left;
+	width: 540px;
+	height: 400px;
+	padding: 10px;
+	overflow: auto;
+}

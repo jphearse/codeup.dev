@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Surviving Severe Weather</title>
+		<link href="styles/styles.css" rel="stylesheet" type="text/css"/>
+		<link href="styles/hot-spots-styles.css" rel="stylesheet" type="text/css"/>
+		<script language="javascript" src="scripts/hot-spots-to.js"></script>
+		
+		<!--- link your other script files here that are specific to this HTML page here --->
+	</head>	
+	<body onload="javascript:parent.visitTopic12();">
+		<header>
+			<div id="banner">	<img src=images/tornado-banner.jpg alt="banner" title="Banner"/> </div>
+		</header>
+		<div id="all">
+			<div id="navigation">
+			<nav>
+			<div id="sidelinks" >
+			<a href="intro.html">Introduction</a>  <br>  <br>
+			<a href="hurricane-1.html">Hurricanes</a>   <br><br>
+			<a href="tornado-1.html">Tornadoes</a>     <br><br>
+			<a href="winter-1.html">Winter Storms</a> <br><br>
+			<a href="thunder-1.html">Thunderstorms</a> <br><br>
+			<a href="drought-1.html">Drought</a> <br><br>
+			<a href="prep-1.html">Preparedness</a> <br><br>
+			<a href="reference.html">References</a> <br><br>
+			<a href="final-test.html" id="quiz-link">Test</a> <br><br>
+			<a href="certificate.html" id="cert-link">Certificate</a>  <!--- include your navigation links here --->
+			</div>
+			
+			</nav>
+		</div>	
+		<div id="main">
+		<div id="sub-navigation">
+			<nav>
+				<a class="navlinks" href="tornado-1.html">Tornado Facts</a> |
+				<a class="navlinks" href="tornado-2.html">Media Page</a> |
+				<a class="navlinks" href="tornado-3.html">Interactive</a> | 
+				<a class="navlinks" href="tornado-4.html">Mini Quiz</a> 				<!--- include your sub-navigation links, if any, here --->
+			</nav>
+		</div>
+		
+		
+		<section>
+			<div id="main-info">
+				<article>
+					<header>
+						<h1>Tornado - Interactive</h1>
+					</header>
+<section>
+            	<p>Hover your mouse over each item to learn about surviving a tornado.</p>
+				
+				<div id="hotspots">
+					<div class="column">
+					 	<div id="hs1" class="hotspot" 
+				     		onmouseover="javascript:showText( 1 )"
+				     		onmouseout="javascript:hideOutput()"><p>High Winds</p></div> 
+					</div>
+					<div class="column">
+				     	<div id="hs2" class="hotspot" 
+				     		onmouseover="javascript:showText( 2 )"
+				     		onmouseout="javascript:hideOutput()"><p>Debris</p></div>  
+					</div>             <br>
+					<div class="column">        
+				 		<div id="hs3" class="hotspot"
+				     		onmouseover="javascript:showText( 3 )"
+				     		onmouseout="javascript:hideOutput()"><p>Get Low!</p></div> 
+					</div>
+					<div class="column">
+					 	<div id="hs4" class="hotspot" 
+				     		onmouseover="javascript:showText( 4 )"
+				     		onmouseout="javascript:hideOutput()"><p>Protect Yourself</p></div>
+					</div>
+				</div>
+				    
+            </section>
+            <section>
+				<div id="output">
+					<div id="output-box">
+						<p id="output-text">asdf</p>
+					</div>
+				</div>
+            </section>
+					<!--- put your content here --->
+				</article>
+			</div>
+			</div>
+			<div id="aside-info">
+				<aside>
+					<header>
+						<p id="aside-title-audio">Audio</p>
+					</header>
+<audio controls autoplay>
+  
+  <source src="audio/Audio-Activity.mp3" type="audio/mpeg">
+
+</audio>					<!--- put your audio here --->
+					<br/>
+					
+					<header>
+						<p id="aside-title-audio">Captions</p>
+					</header>
+				<div id="transcript">
+					Hover over each item to learn more about tornado preparedness.				<!--- include your transcript here --->
+				</div>
+				</aside>
+			</div>
+		</section>
+		</div>
+
+
+	</body>
+</html>
