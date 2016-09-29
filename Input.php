@@ -40,4 +40,41 @@ class Input
     // later in the curriculum.                                              //
     ///////////////////////////////////////////////////////////////////////////
     private function __construct() {}
+
+
+
+
+    public static function getString($key){
+        if (! self::has($key)) {
+            throw new Exception('Request does not contain key!');
+        }
+        $value = self::get($key);
+        
+        if (gettype($value) != 'string') {
+            throw new Exception('$key must be a string!');
+        }
+        return $value;
+    } 
+
+    public static function getNumber($key){
+        if (!self::has($key)) {
+            throw new Exception('Request does not contain key!');
+        }
+        $value = self::get($key);
+        
+        if (!is_numeric($value)) {
+            throw new Exception('$key must be a number!');
+        }
+        return $value;
+    } 
+
+    
 }
+
+
+
+
+
+
+
+
