@@ -18,12 +18,8 @@ function pageController($dbc)
 	$stmt2 = $dbc->prepare($query2);
 	$stmt2->execute();
 	$parks = $stmt2 ->fetchAll(PDO::FETCH_ASSOC);
-	return [ 
-		'parks' => $parks,
-		'parkCount' => $stmt->rowCount()
-	];
-};
-extract (pageController($dbc));
+$errors = [];
+try {
 function submitNewPark($dbc) 
 {
 	$query = 'INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES (?, ?, ?, ?, ?)';
@@ -34,11 +30,24 @@ function submitNewPark($dbc)
 	$date = format(Input::get('date_established'));
 
 	$stmt = $dbc->prepare($query);
-	$stmt->execute(array(Input::getString('name'),Input::getString('location'), $date ,Input::getString('area_in_acres'),Input::getString('description')));
+	$stmt->execute(array(Input::getString('name'),Input::getString('location'), $date ,Input::getNumber('area_in_acres'),Input::getString('description')));
 }
 if(Input::get('name')) {
 	submitNewPark($dbc);
 };
+
+	
+} catch (Exception $exception){
+	$errors[] = $exception->getMessage();
+}
+var_dump($errors);
+	return [ 
+		'parks' => $parks,
+		'error' => $errors,
+		'parkCount' => $stmt->rowCount()
+	];
+};
+extract (pageController($dbc));
 ?>
 
 <!DOCTYPE html>
@@ -71,17 +80,21 @@ if(Input::get('name')) {
 				<a href="national_parks.php?offset=<?= $i ?>" class="btn btn-success"><?=($j++)?></a>
 			<?php } ?>
 
+			 <br><h3><?php foreach ($error as $err) {
+					echo $err;
+				} ?></h3>
 			<form method="GET">
 				<h5>Name: </h5>
-				<input type="text" name="name" class="form-control" placeholder="Name" required><br>
+				<input type="text" name="name" class="form-control" placeholder="Name" value="<?php echo htmlspecialchars(Input::get('name')); ?>" required><br>
 				<h5>Location: </h5>
-				<input type="text" name="location" class="form-control" placeholder="Location" required><br>
+				<input type="text" name="location" class="form-control" placeholder="Location" value="<?php echo htmlspecialchars(Input::get('location')); ?>" required><br>
 				<h5>Date: </h5>
-				<input type="text" name="date_established" class="form-control" placeholder="YYYY-MM-DD" required><br>
+				<input type="text" name="date_established" class="form-control" placeholder="YYYY-MM-DD" value="<?php echo htmlspecialchars(Input::get('date_established')); ?>"
+				required><br>
 				<h5>Area in Acres: </h5>
-				<input type="text" name="area_in_acres" class="form-control" placeholder="Area in Acres"><br>
+				<input type="text" name="area_in_acres" class="form-control" placeholder="Area in Acres" value="<?php echo htmlspecialchars(Input::get('area_in_acres')); ?>"><br>
 				<h5>Description: </h5>
-				<input type="text" name="description" class="form-control" placeholder="Description"><br>
+				<input type="text" name="description" class="form-control" placeholder="Description" value="<?php echo htmlspecialchars(Input::get('description')); ?>"><br>
 				<input type="submit" name="submit">
 
 
