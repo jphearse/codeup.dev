@@ -49,21 +49,27 @@ class Input
             throw new Exception('Request does not contain key!');
         }
         $value = self::get($key);
+            var_dump($value);
         
+               if(empty($value)){
+                throw new Exception("$key is empty"); 
+            }
         if (gettype($value) != 'string') {
-            throw new Exception('$key must be a string!');
+
+
+            throw new Exception("$key must be a string, The value you gave is $value");
         }
         return $value;
     } 
 
     public static function getNumber($key){
         if (!self::has($key)) {
-            throw new Exception('Request does not contain key!');
+            throw new Exception("Request does not contain key!");
         }
         $value = self::get($key);
         
         if (!is_numeric($value)) {
-            throw new Exception('$key must be a number!');
+            throw new Exception("$key must be a number, The value you gave is $value");
         }
         return $value;
     } 
