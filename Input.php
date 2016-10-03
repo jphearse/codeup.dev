@@ -43,36 +43,46 @@ class Input
 
 
 
-
-    public static function getString($key){
-        if (! self::has($key)) {
-            throw new Exception('Request does not contain key!');
-        }
-        $value = self::get($key);
-            var_dump($value);
+public static function getString($key, $min = 0, $max = 100000)
+    {
         
-               if(empty($value)){
-                throw new Exception("$key is empty"); 
-            }
+        if(!self::has($key)) {
+            throw new OutOfRangeException("Request does not contain key: '{$key}'");
+        }
+    
+        $value = self::get($key);
         if (gettype($value) != 'string') {
-
-
-            throw new Exception("$key must be a string, The value you gave is $value");
+            throw new DomainException("Value {$value} is not a string");
         }
+        if (strlen($value) < $min || strlen($value) > $max) {
+            throw new LengthException("Length must be between {$min} and {$max}");
+        }
+        
+        if (!is_int($min) && !is_int($max)) {
+            throw new InvalidArgumentException("Value at index '{$key}' is the wrong type");
+        }
+        
         return $value;
-    } 
-
-    public static function getNumber($key){
+    }
+    public static function getNumber($key, $min = 0, $max = 1000)
+    {
+        
         if (!self::has($key)) {
-            throw new Exception("Request does not contain key!");
+            throw new OutOfRangeException("Request does not contain key: '{$key}'");
         }
         $value = self::get($key);
-        
-        if (!is_numeric($value)) {
-            throw new Exception("$key must be a number, The value you gave is $value");
+        if ($value < $min || $value > $max) {
+            throw new RangeException("Number must be between {$min} and {$max}");
         }
-        return $value;
-    } 
+        
+        if (!is_numeric($value)){
+            throw new InvalidArgumentException("Value '{$value}' is not a number!");
+        }
+        
+    
+        return (int)$value;
+    }
+
 
     
 }
