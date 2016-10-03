@@ -40,6 +40,21 @@ if(Input::get('name')) {
 } catch (Exception $exception){
 	$errors[] = $exception->getMessage();
 }
+catch(invalidArgumentException $e){
+					$errors[] = $e->getMessage();
+				}
+catch(LengthRangeException $e){
+					$errors[] = $e->getMessage();
+				}
+catch(DomainException $e){
+					$errors[] = $e->getMessage();
+				}
+catch(RangeException $e){
+					$errors[] = $e->getMessage();
+				}
+catch(OutOfRangeException $e){
+					$errors[] = $e->getMessage();
+				}
 var_dump($errors);
 	return [ 
 		'parks' => $parks,
