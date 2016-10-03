@@ -18,7 +18,7 @@ abstract class Model
     public function __construct(array $attributes = array())
     {
         self::dbConnect();
-
+        $this->attributes = $attributes;
         // @TODO: Initialize the $attributes property with the passed value
     }
 
@@ -31,6 +31,8 @@ abstract class Model
     {
         if (!self::$dbc) {
             // @TODO: Connect to database
+            self::$dbc = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
+            $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
     }
 
@@ -44,6 +46,12 @@ abstract class Model
     public function __get($name)
     {
         // @TODO: Return the value from attributes for $name if it exists, else return null
+        if (array_key_exists($name, $this->attributes)) {
+                return $this->attributes[$name];
+            } else {
+                return null;
+            }
+
     }
 
     /**
@@ -55,12 +63,20 @@ abstract class Model
     public function __set($name, $value)
     {
         // @TODO: Store name/value pair in attributes array
+        $this->attributes[$name] = $value;
     }
 
     /** Store the object in the database */
     public function save()
     {
         // @TODO: Ensure there are values in the attributes array before attempting to save
+        if(!empty($this->attributes)) {
+                if(isset($this->attributes['id'])) {
+                    $this->update();
+                } else {
+                    $this->insert();
+                }
+            }
 
         // @TODO: Call the proper database method: if the `id` is set this is an update, else it is a insert
     }
