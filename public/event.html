@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Events</title>
+</head>
+<body>
+
+<div id="cast"></div>
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+        
+$.ajax({
+  type:"GET",
+  url:"https://app.ticketmaster.com/discovery/v2/events.json?apikey=lSZMwzhRqOWhhGWgSGXcJoTI9dq1Wvr9&keyword=music&city=San Antonio",
+  async:true,
+  dataType: "json",
+  success: function(json) {
+              console.log(json);
+              // Parse the response.
+              // Do other things.
+movieCast(json);
+           },
+  error: function(xhr, status, err) {
+              // This time, we do not end up here!
+           }
+
+});
+
+function movieCast(cast){
+
+        var eventSpace = '';     
+        console.log(cast._embedded.events[0].dates.start);
+        for (var i = 0; i < 19; i++) {
+
+        eventSpace += '<div id="directorInfo">'+ cast._embedded.events[i].name + "</div>";
+        eventSpace += '<div id="directorInfo">'+ cast._embedded.events[i].info + "</div>";
+        eventSpace += '<div id="directorInfo">'+ cast._embedded.events[i].dates.start.localDate + "</div><br>";
+        }
+
+        $("#cast").html(eventSpace);
+    }
+
+</script>
+</body>
+</html>
