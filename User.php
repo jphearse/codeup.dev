@@ -17,10 +17,12 @@ class User extends Model
         //        so the object properly represents a DB record
         $insert = ('INSERT INTO users (username, password, email) VALUES (:username, :password, :email)');
         $stmt = self::$dbc->prepare($insert);
+
         $stmt->bindValue(':username', $this->attributes['username'], PDO::PARAM_STR);
         $stmt->bindValue(':password',  $this->attributes['password'],  PDO::PARAM_STR);
         $stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
         $stmt->execute();
+
         $this->attributes['id'] = self::$dbc->InsertId();
     }
 
@@ -34,7 +36,7 @@ class User extends Model
         $stmt->bindValue(':username', $this->attributes['username'], PDO::PARAM_STR);
         $stmt->bindValue(':password',  $this->attributes['password'],  PDO::PARAM_STR);
         $stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_STR);
+        $stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
         $stmt->execute();
     }
 
@@ -76,7 +78,7 @@ class User extends Model
         self::dbConnect();
 
         // @TODO: Learning from the find method, return all the matching records
-                self::dbConnect();
+
         // @TODO: Learning from the find method, return all the matching records
         $allUsers = self::$dbc->prepare('SELECT * FROM ' . self::$table);
         $allUsers->execute();
@@ -90,12 +92,26 @@ class User extends Model
     public static function delete()
     {
         self::dbConnect();
-        $deleteUsers = self::$dbc->prepare('DELETE * FROM ' . self::$table . ' WHERE id = :id');
+        $deleteUsers = self::$dbc->prepare('DELETE FROM users WHERE id = :id');
         $deleteUsers->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
         $deleteUsers->execute();
     }
 
 }
+
+// echo $dbc->getAttribute(PDO::ATTR_CONNECTION_STATUS) . "\n";
+// $queryDelete = 'DROP TABLE IF EXISTS user_table';
+// $dbc->exec($queryDelete);
+// echo "Droped if existed".PHP_EOL;
+// $queryCreateTabe = 'CREATE TABLE national_parks (
+//     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+//     name VARCHAR(50) NOT NULL,
+//     email VARCHAR(50) NOT NULL,
+//     PRIMARY KEY (id)
+//     );';
+// $dbc->exec($queryCreateTabe);
+// echo "Table created".PHP_EOL;
+
 
 $model1 = new User();
 $model1->Name = 'Joe';
