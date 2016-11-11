@@ -4,12 +4,20 @@ div{
 		body{
 			margin: 15px;
 		}
-		p, nav{
+		p{
+			text-indent: 20px;
+			font-size: 20px;
+			margin: 0 0 15px 0;
+		}
+		nav{
 			font-size: 20px;
 			margin: 0 0 15px 0;
 		}
 		span{
 			color:#62ca35;
+		}
+		ul{
+			font-size: 20px;
 		}
 		a{
 			color: black;
@@ -73,6 +81,28 @@ div{
 		#teamPic > img{
 			width: 270px;
 		}
+		#rotateScheme{
+			display: block;
+			margin: auto;
+		}
+		.rotatRow{
+			display:flex;
+  			justify-content:space-between;
+		}
+		#skills{
+			padding: 0px;
+		}
+		#rotatBox{
+			border:solid #62ca35;
+			width: 350px;
+			float: left;
+		}
+		#rotatImg{
+			display: block;
+			margin: auto;
+			height: 300px;
+		}
+
 		#teamInfo{
 			margin-left: 15px;
 			width: 60%;
